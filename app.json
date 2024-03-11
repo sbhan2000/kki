@@ -13,7 +13,7 @@
     ],
     "env": {
       "BOT_TOKEN": {
-        "description": "⦗ @GoNRIL_BOT ⦘ ↫ تـــوكـــن الـبـوت",
+        "description": "⦗ @BotFather ⦘ ↫ تـــوكـــن الـبـوت",
         "value": "",
         "required": true
       },
