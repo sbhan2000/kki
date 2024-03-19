@@ -41,9 +41,14 @@
         "description": "ايـدي قروب السـجل",
         "value": "-100",
         "required": true
-      }
     },
-    "buildpacks": [
+    "MUST_JOIN": {
+      "description": "Your additional environment variable",
+      "value": "",
+      "required": false
+    }
+  },
+  "buildpacks": [
           {
               "url": "heroku/python"
           },
