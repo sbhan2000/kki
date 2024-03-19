@@ -9,7 +9,7 @@ from MatrixMusic.utils.decorators.language import language
 from config import BANNED_USERS
 
 
-@app.on_message(command(["حظر مجموعة", "حظر مجموعه"]) & SUDOERS)
+@app.on_message(command(["حظر المجموعة", "حظر المجموعة"]) & SUDOERS)
 @language
 async def blacklist_chat_func(client, message: Message, _):
     if len(message.command) != 2:
