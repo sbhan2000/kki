@@ -65,13 +65,13 @@ async def update_(client, message, _):
         "tsnrhtdd"[(format // 10 % 10 != 1) * (format % 10 < 4) * format % 10 :: 4],
     )
     for info in repo.iter_commits(f"HEAD..origin/{config.UPSTREAM_BRANCH}"):
-        updates += f"<b>➣ #{info.count()}: <a href={REPO_}/commit/{info}>{info.summary}</a> ʙʏ -> {info.author}</b>\n\t\t\t\t<b>➥ ᴄᴏᴍᴍɪᴛᴇᴅ ᴏɴ :</b> {ordinal(int(datetime.fromtimestamp(info.committed_date).strftime('%d')))} {datetime.fromtimestamp(info.committed_date).strftime('%b')}, {datetime.fromtimestamp(info.committed_date).strftime('%Y')}\n\n"
-    _update_response_ = "<b>➣ يوجد تحديث جديد للبوت</b>\n➣ قم بتحديث بوتك الان\n\n<b>➣ التحديثات :</b>\n"
+        updates += f"<b>➣ #{info.count()}: <a href={REPO_}/commit/{info}>{info.summary}</a>بواسطة -> {info.author}</b>\n\t\t\t\t<b>➥ ᴄᴏᴍᴍɪᴛᴇᴅ ᴏɴ :</b> {ordinal(int(datetime.fromtimestamp(info.committed_date).strftime('%d')))} {datetime.fromtimestamp(info.committed_date).strftime('%b')}, {datetime.fromtimestamp(info.committed_date).strftime('%Y')}\n\n"
+    _update_response_ = "<b>🚦يوجد تحديث جديد للبوت</b>\n🚦قم بتحديث بوتك الان\n\n<b>🚦التحديثات :</b>\n"
     _final_updates_ = _update_response_ + updates
     if len(_final_updates_) > 4096:
         url = await ZelzalyBin(updates)
         nrs = await response.edit(
-            f"<b>➣ يوجد تحديث جديد للبوت</b>\n➣ قم بتحديث بوتك الان\n\n<b>➣ التحديثات :</b>\n\n<a href={url}>اضغط هنا لرؤية التحديثات</a>"
+            f"<b>🚦يوجد تحديث جديد للبوت</b>\n🚦قم بتحديث بوتك الان\n\n<b>🚦التحديثات :</b>\n\n<a href={url}>🚦اضغط هنا لرؤية التحديثات</a>"
         )
     else:
         nrs = await response.edit(_final_updates_, disable_web_page_preview=True)
@@ -113,13 +113,13 @@ async def update_(client, message, _):
 
 @app.on_message(command(["اعاده تشغيل"]) & SUDOERS)
 async def restart_(_, message):
-    response = await message.reply_text("- جـارِ إعـادة التشغيـل ...")
+    response = await message.reply_text("🚦جـارِ إعـادة التشغيـل ...")
     ac_chats = await get_active_chats()
     for x in ac_chats:
         try:
             await app.send_message(
                 chat_id=int(x),
-                text=f"» {app.mention} في وضـع اعـادة التشغيـل ...\n\n» انتظـر 20-15 دقيقـه ⏳. . .",
+                text=f"🚦{app.mention} في وضـع اعـادة التشغيـل ...\n\n🚦انتظـر 20-15 دقيقـه ⏳. . .",
             )
             await remove_active_chat(x)
             await remove_active_video_chat(x)
@@ -133,6 +133,6 @@ async def restart_(_, message):
     except:
         pass
     await response.edit_text(
-        "» جـارِ اعـادة تشغيـل البـوت ...\n» انتظـر عـدة دقـائـق ⏳\n» حتـى يعمـل البـوت ☑️..."
+        "🚦جـارِ اعـادة تشغيـل البـوت ...\n🚦انتظـر عـدة دقـائـق ⏳\n🚦حتـى يعمـل البـوت ☑️..."
     )
     os.system(f"kill -9 {os.getpid()} && bash start")
