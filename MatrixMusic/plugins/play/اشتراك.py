@@ -33,7 +33,7 @@ async def checker(_: Client, message: Message):
 
 #------------------------
 @app.on_message( filters.incoming & filters.private, group=-1)
-async def channel_channel(app: Client, msg: Message):
+async def checker(_: Client, message: Message):
     if not channel:
         return
     try:
