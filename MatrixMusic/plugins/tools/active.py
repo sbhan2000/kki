@@ -15,7 +15,7 @@ from MatrixMusic.utils.database import (
 
 @app.on_message(command(["المكالمات الصوتيه", "/activevoice"]) & SUDOERS)
 async def activevc(_, message: Message):
-    mystic = await message.reply_text("» جـارِ جلب جميـع المكالمـات الصوتيـه في البـوت...")
+    mystic = await message.reply_text("🚦جـارِ جلب جميـع المكالمـات الصوتيـه في البـوت...")
     served_chats = await get_active_chats()
     text = ""
     j = 0
@@ -37,17 +37,17 @@ async def activevc(_, message: Message):
         except:
             continue
     if not text:
-        await mystic.edit_text(f"»لايوجد محادثات صوتيه جارية الان ع البوت {app.mention}.")
+        await mystic.edit_text(f"🚦لايوجد محادثات صوتيه جارية الان ع البوت {app.mention}.")
     else:
         await mystic.edit_text(
-            f"<b>» قائمة المحادثات الصوتية الجاريه الان في البوت :</b>\n\n{text}",
+            f"<b>🚦قائمة المحادثات الصوتية الجاريه الان في البوت :</b>\n\n{text}",
             disable_web_page_preview=True,
         )
 
 
 @app.on_message(command(["المكالمات المرئيه", "/activevideo"]) & SUDOERS)
 async def activevi_(_, message: Message):
-    mystic = await message.reply_text("» جـارِ جلب جميـع مكالمـات الفيديـو المرئيـه في البـوت...")
+    mystic = await message.reply_text("🚦جـارِ جلب جميـع مكالمـات الفيديـو المرئيـه في البـوت...")
     served_chats = await get_active_video_chats()
     text = ""
     j = 0
@@ -69,9 +69,9 @@ async def activevi_(_, message: Message):
         except:
             continue
     if not text:
-        await mystic.edit_text(f"»لايوجد محادثات مرئية جارية الان ع البوت {app.mention}.")
+        await mystic.edit_text(f"🚦لايوجد محادثات مرئية جارية الان ع البوت {app.mention}.")
     else:
         await mystic.edit_text(
-            f"<b>» قائمة المحادثات المرئية الجاريه الان في البوت :</b>\n\n{text}",
+            f"<b>🚦قائمة المحادثات المرئية الجاريه الان في البوت :</b>\n\n{text}",
             disable_web_page_preview=True,
         )
