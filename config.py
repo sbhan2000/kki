@@ -6,27 +6,27 @@ from pyrogram import filters
 from database import get_db_general_rtb
 from utils import get_restarted
 
-super_sudoers = [7185538796]
+super_sudoers = [1748768168]
 
 load_dotenv()
 
 # Get this value from my.telegram.org/apps
-API_ID = int(getenv("API_ID", 15986212))
-API_HASH = getenv("API_HASH", "6c6ac02bc91d512401c09279f4e69837")
+API_ID = int(getenv("API_ID", 22645003))
+API_HASH = getenv("API_HASH", "1ad9ff9e341f37e5c2aebc34527ae9f2")
 
 # Get your token from @BotFather on Telegram.
 BOT_TOKEN = getenv("BOT_TOKEN")
 
 # Get your mongo url from cloud.mongodb.com
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://proceed58:proceed58@cluster0.p5s9ym5.mongodb.net/?retryWrites=true&w=majority")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://lucifer:ASShaw96@lucifer.vuows.mongodb.net/lucifer?retryWrites=true&w=majority")
 
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 2000))
+DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 20000))
 
 # Chat id of a group for logging bot's activities
 LOGGER_ID = int(getenv("LOGGER_ID", None))
 
 # Get this value from @FallenxBot on Telegram by /id
-OWNER_ID = int(getenv("OWNER_ID", 7185538796))
+OWNER_ID = int(getenv("OWNER_ID", 1748768168))
 
 ## Fill these variables if you're deploying on heroku.
 # Your heroku app name
@@ -43,7 +43,7 @@ GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/QR_KR")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/ah07v")
 
 # Set this to True if you want the assistant to automatically leave chats after an interval
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
@@ -94,21 +94,21 @@ command = ["/"]
 
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://www7.0zz0.com/2024/02/28/05/415560079.jpg"
+    "START_IMG_URL", "https://te.legra.ph/file/db83c3505d2e7a9276cfe.png"
 )
 PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://www7.0zz0.com/2024/02/28/05/415560079.jpg"
+    "PING_IMG_URL", "https://te.legra.ph/file/db83c3505d2e7a9276cfe.png"
 )
-PLAYLIST_IMG_URL = "https://www7.0zz0.com/2024/02/28/05/415560079.jpg"
-STATS_IMG_URL = "https://www7.0zz0.com/2024/02/28/05/415560079.jpg"
-TELEGRAM_AUDIO_URL = "https://www7.0zz0.com/2024/02/28/05/415560079.jpg"
-TELEGRAM_VIDEO_URL = "https://www7.0zz0.com/2024/02/28/05/415560079.jpg"
-STREAM_IMG_URL = "https://www7.0zz0.com/2024/02/28/05/415560079.jpg"
-SOUNCLOUD_IMG_URL = "https://www7.0zz0.com/2024/02/28/05/415560079.jpg"
-YOUTUBE_IMG_URL = "https://www7.0zz0.com/2024/02/28/05/415560079.jpg"
-SPOTIFY_ARTIST_IMG_URL = "https://www7.0zz0.com/2024/02/28/05/415560079.jpg"
-SPOTIFY_ALBUM_IMG_URL = "https://www7.0zz0.com/2024/02/28/05/415560079.jpg"
-SPOTIFY_PLAYLIST_IMG_URL = "https://www7.0zz0.com/2024/02/28/05/415560079.jpg"
+PLAYLIST_IMG_URL = "https://te.legra.ph/file/db83c3505d2e7a9276cfe.png"
+STATS_IMG_URL = "https://te.legra.ph/file/db83c3505d2e7a9276cfe.png"
+TELEGRAM_AUDIO_URL = "https://te.legra.ph/file/db83c3505d2e7a9276cfe.png"
+TELEGRAM_VIDEO_URL = "https://te.legra.ph/file/db83c3505d2e7a9276cfe.png"
+STREAM_IMG_URL = "https://te.legra.ph/file/db83c3505d2e7a9276cfe.png"
+SOUNCLOUD_IMG_URL = "https://te.legra.ph/file/db83c3505d2e7a9276cfe.png"
+YOUTUBE_IMG_URL = "https://te.legra.ph/file/db83c3505d2e7a9276cfe.png"
+SPOTIFY_ARTIST_IMG_URL = "https://te.legra.ph/file/db83c3505d2e7a9276cfe.png"
+SPOTIFY_ALBUM_IMG_URL = "https://te.legra.ph/file/db83c3505d2e7a9276cfe.png"
+SPOTIFY_PLAYLIST_IMG_URL = "https://te.legra.ph/file/db83c3505d2e7a9276cfe.png"
 
 
 def time_to_seconds(time):
