@@ -11,7 +11,7 @@ from config import BANNED_USERS
 
 
 @app.on_message(
-    command(["تقدم", "مرر", "cseek", "seekback", "cseekback"])
+    command(["تقدم", "مرر", "seek", "seekback", "cseekback"])
     & ~BANNED_USERS
 )
 @AdminRightsCheck
