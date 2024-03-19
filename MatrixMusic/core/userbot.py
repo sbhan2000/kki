@@ -47,17 +47,17 @@ class Userbot(Client):
         )
 
     async def start(self):
-        LOGGER("ميــوزك ريڤو").info(f"جارِ تشغيل الحساب المساعد . . .")
+        LOGGER("سورس حمد").info(f"🚦جارِ تشغيل الحساب المساعد . . .")
         if config.STRING1:
             await self.one.start()
             try:
-                await self.one.join_chat("XMATTMX")
-                await self.one.join_chat("MatrxSupport")
+                await self.one.join_chat("ah07v")
+                await self.one.join_chat("ah07vSupport")
             except:
                 pass
             assistants.append(1)
             try:
-                await self.one.send_message(config.LOGGER_ID, "» تم تشغيـل الحسـاب المسـاعـد .. بنجـاح ✅")
+                await self.one.send_message(config.LOGGER_ID, "🚦تم تشغيـل الحسـاب المسـاعـد .. بنجـاح ✅")
             except:
                 LOGGER(__name__).error(
                     "Assistant Account 1 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin!"
@@ -67,18 +67,18 @@ class Userbot(Client):
             self.one.name = self.one.me.first_name
             self.one.username = self.one.me.username
             assistantids.append(self.one.id)
-            LOGGER("ميــوزك ريڤو").info(f"تم بدء تشغيل الحساب المساعد {self.one.name} ...✓")
+            LOGGER("سورس حمد").info(f"🚦تم بدء تشغيل الحساب المساعد {self.one.name} ...✓")
 
         if config.STRING2:
             await self.two.start()
             try:
-                await self.one.join_chat("XMATTMX")
-                await self.one.join_chat("MatrxSupport")
+                await self.one.join_chat("ah07v")
+                await self.one.join_chat("ah07vSupport")
             except:
                 pass
             assistants.append(2)
             try:
-                await self.two.send_message(config.LOGGER_ID, "» تم تشغيـل الحسـاب المسـاعـد² .. بنجـاح ✅")
+                await self.two.send_message(config.LOGGER_ID, "🚦تم تشغيـل الحسـاب المسـاعـد² .. بنجـاح ✅")
             except:
                 LOGGER(__name__).error(
                     "Assistant Account 2 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin!"
@@ -88,13 +88,13 @@ class Userbot(Client):
             self.two.name = self.two.me.mention
             self.two.username = self.two.me.username
             assistantids.append(self.two.id)
-            LOGGER("ميــوزك ريڤو").info(f"Assistant Two Started as {self.two.name}")
+            LOGGER("سورس حمد").info(f"🚦تم بدء تشغيل الحساب المساعد {self.two.name}")
 
         if config.STRING3:
             await self.three.start()
             try:
-                await self.one.join_chat("XMATTMX")
-                await self.one.join_chat("MatrxSupport")
+                await self.one.join_chat("ah07v")
+                await self.one.join_chat("ah07vSupport")
             except:
                 pass
             assistants.append(3)
@@ -109,13 +109,13 @@ class Userbot(Client):
             self.three.name = self.three.me.mention
             self.three.username = self.three.me.username
             assistantids.append(self.three.id)
-            LOGGER("ميــوزك ريڤو").info(f"Assistant Three Started as {self.three.name}")
+            LOGGER("سورس حمد").info(f"🚦تم بدء تشغيل الحساب المساعد {self.three.name}")
 
         if config.STRING4:
             await self.four.start()
             try:
-                await self.one.join_chat("XMATTMX")
-                await self.one.join_chat("MatrxSupport")
+                await self.one.join_chat("ah07v")
+                await self.one.join_chat("ah07vSupport")
             except:
                 pass
             assistants.append(4)
@@ -130,13 +130,13 @@ class Userbot(Client):
             self.four.name = self.four.me.mention
             self.four.username = self.four.me.username
             assistantids.append(self.four.id)
-            LOGGER("ميــوزك ريڤو").info(f"Assistant Four Started as {self.four.name}")
+            LOGGER("سورس حمد").info(f"🚦تم بدء تشغيل الحساب المساعد {self.four.name}")
 
         if config.STRING5:
             await self.five.start()
             try:
-                await self.one.join_chat("XMATTMX")
-                await self.one.join_chat("MatrxSupport")
+                await self.one.join_chat("ah07v")
+                await self.one.join_chat("ah07vSupport")
             except:
                 pass
             assistants.append(5)
@@ -151,10 +151,10 @@ class Userbot(Client):
             self.five.name = self.five.me.mention
             self.five.username = self.five.me.username
             assistantids.append(self.five.id)
-            LOGGER("ميــوزك ريڤو").info(f"Assistant Five Started as {self.five.name}")
+            LOGGER("سورس حمد").info(f"🚦تم بدء تشغيل الحساب المساعد {self.five.name}")
 
     async def stop(self):
-        LOGGER("ميــوزك ريڤو").info(f"Stopping Assistants...")
+        LOGGER("سورس حمد").info(f"🚦تم ايقاف الحساب المساعد...")
         try:
             if config.STRING1:
                 await self.one.stop()
