@@ -43,7 +43,7 @@ def gpt(query):
         return None
 
 
-@app.on_message(filters.command('مارو', ''))
+@app.on_message(filters.command('حمد', ''))
 async def gpt_reply(client, message):
     wait = await message.reply_text("↯︙تم استلام سؤال لـ ↫ ⦗ سيرفرات هيروكو ⦘", reply_to_message_id = message.id)
     data = message.text.split(maxsplit=1)
