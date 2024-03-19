@@ -47,7 +47,7 @@ async def developersrep(m: Message):
         if get_db_general_rtb("developer") is None:
             set_db_general_rtb("developer", m.reply_to_message.from_user.id,
                                m.reply_to_message.from_user.first_name)
-            await m.reply_text(f"↯︙تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) مطور بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             developer.append(m.reply_to_message.from_user.id)
@@ -55,13 +55,13 @@ async def developersrep(m: Message):
         else:
             for dv in get_db_general_rtb("developer"):
                 if m.reply_to_message.from_user.id == dv[0]:
-                    await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+                    await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                        f"(tg://user?id={m.reply_to_message.from_user.id}) مطور بالفعل\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
             set_db_general_rtb("developer", m.reply_to_message.from_user.id,
                                m.reply_to_message.from_user.first_name)
-            await m.reply_text(f"↯︙تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) مطور بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             developer.append(m.reply_to_message.from_user.id)
@@ -81,7 +81,7 @@ async def developersuser(c: Client, m: Message):
     try:
         if get_db_general_rtb("developer") is None:
             set_db_general_rtb("developer", chat_id_foruser, chat_name_foruser)
-            await m.reply_text(f"↯︙تم رفع العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦تم رفع العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) مطور بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             developer.append(chat_id_foruser)
@@ -89,12 +89,12 @@ async def developersuser(c: Client, m: Message):
         else:
             for dv in get_db_general_rtb("developer"):
                 if chat_id_foruser == dv[0]:
-                    await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+                    await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                        f"(tg://user?id={chat_id_foruser}) مطور بالفعل\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
             set_db_general_rtb("developer", chat_id_foruser, chat_name_foruser)
-            await m.reply_text(f"↯︙تم رفع العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦تم رفع العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) مطور بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             developer.append(chat_id_foruser)
@@ -109,7 +109,7 @@ async def developersuser(c: Client, m: Message):
 async def undevelopersrep(m: Message):
     try:
         if get_db_general_rtb("developer") is None:
-            await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) غير مطور اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
@@ -117,12 +117,12 @@ async def undevelopersrep(m: Message):
             for dv in get_db_general_rtb("developer"):
                 if m.reply_to_message.from_user.id == dv[0]:
                     del_db_general_rtb("developer", m.reply_to_message.from_user.id)
-                    await m.reply_text(f"↯︙تم تنزيل العضو [{m.reply_to_message.from_user.first_name}]"
+                    await m.reply_text(f"🚦تم تنزيل العضو [{m.reply_to_message.from_user.first_name}]"
                                        f"(tg://user?id={m.reply_to_message.from_user.id}) من المطورين بنجاح\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     developer.remove(m.reply_to_message.from_user.id)
                     return
-            await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) غير مطور اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -140,7 +140,7 @@ async def undeveloperuser(c: Client, m: Message):
     chat_name_foruser = result[1]
     try:
         if get_db_general_rtb("developer") is None:
-            await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) غير مطور اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
@@ -153,7 +153,7 @@ async def undeveloperuser(c: Client, m: Message):
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     developer.remove(chat_id_foruser)
                     return
-            await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) غير مطور اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -172,7 +172,7 @@ async def seconddevelopersrep(m: Message):
         if get_db_general_rtb("secdeveloper") is None:
             set_db_general_rtb("secdeveloper", m.reply_to_message.from_user.id,
                                m.reply_to_message.from_user.first_name)
-            await m.reply_text(f"↯︙تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) مطور ثانوي بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             developer.append(m.reply_to_message.from_user.id)
@@ -180,13 +180,13 @@ async def seconddevelopersrep(m: Message):
         else:
             for dv in get_db_general_rtb("secdeveloper"):
                 if m.reply_to_message.from_user.id == dv[0]:
-                    await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+                    await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                        f"(tg://user?id={m.reply_to_message.from_user.id}) مطور ثانوي بالفعل\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
             set_db_general_rtb("secdeveloper", m.reply_to_message.from_user.id,
                                m.reply_to_message.from_user.first_name)
-            await m.reply_text(f"↯︙تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) مطور ثانوي بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             developer.append(m.reply_to_message.from_user.id)
@@ -206,7 +206,7 @@ async def seconddevelopersuser(c: Client, m: Message):
     try:
         if get_db_general_rtb("secdeveloper") is None:
             set_db_general_rtb("secdeveloper", chat_id_foruser, chat_name_foruser)
-            await m.reply_text(f"↯︙تم رفع العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦تم رفع العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) مطور ثانوي بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             developer.append(chat_id_foruser)
@@ -214,12 +214,12 @@ async def seconddevelopersuser(c: Client, m: Message):
         else:
             for dv in get_db_general_rtb("secdeveloper"):
                 if chat_id_foruser == dv[0]:
-                    await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+                    await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                        f"(tg://user?id={chat_id_foruser}) مطور ثانوي بالفعل\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
             set_db_general_rtb("secdeveloper", chat_id_foruser, chat_name_foruser)
-            await m.reply_text(f"↯︙تم رفع العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦تم رفع العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) مطور ثانوي بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             developer.append(chat_id_foruser)
@@ -234,7 +234,7 @@ async def seconddevelopersuser(c: Client, m: Message):
 async def secondundevelopersrep(m: Message):
     try:
         if get_db_general_rtb("secdeveloper") is None:
-            await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) غير مطور ثانوي اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
@@ -242,12 +242,12 @@ async def secondundevelopersrep(m: Message):
             for dv in get_db_general_rtb("secdeveloper"):
                 if m.reply_to_message.from_user.id == dv[0]:
                     del_db_general_rtb("secdeveloper", m.reply_to_message.from_user.id)
-                    await m.reply_text(f"↯︙تم تنزيل العضو [{m.reply_to_message.from_user.first_name}]"
+                    await m.reply_text(f"🚦تم تنزيل العضو [{m.reply_to_message.from_user.first_name}]"
                                        f"(tg://user?id={m.reply_to_message.from_user.id}) من المطورين الثانويين بنجاح\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     developer.remove(m.reply_to_message.from_user.id)
                     return
-            await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) غير مطور ثانوي اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -265,7 +265,7 @@ async def secondundeveloperuser(c: Client, m: Message):
     chat_name_foruser = result[1]
     try:
         if get_db_general_rtb("secdeveloper") is None:
-            await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) غير مطور ثانوي اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
@@ -273,12 +273,12 @@ async def secondundeveloperuser(c: Client, m: Message):
             for dv in get_db_general_rtb("secdeveloper"):
                 if chat_id_foruser == dv[0]:
                     del_db_general_rtb("secdeveloper", chat_id_foruser)
-                    await m.reply_text(f"↯︙تم تنزيل العضو [{chat_name_foruser}]"
+                    await m.reply_text(f"🚦تم تنزيل العضو [{chat_name_foruser}]"
                                        f"(tg://user?id={chat_id_foruser}) من المطورين الثانويين بنجاح\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     developer.remove(chat_id_foruser)
                     return
-            await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) غير مطور ثانوي اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -297,20 +297,20 @@ async def genspecialrep(m: Message):
         if get_db_general_rtb("genspecial") is None:
             set_db_general_rtb("genspecial", m.reply_to_message.from_user.id,
                                m.reply_to_message.from_user.first_name)
-            await m.reply_text(f"↯︙تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) مميز عام بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
         else:
             for dv in get_db_general_rtb("genspecial"):
                 if m.reply_to_message.from_user.id == dv[0]:
-                    await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+                    await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                        f"(tg://user?id={m.reply_to_message.from_user.id}) مميز عام بالفعل\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
             set_db_general_rtb("genspecial", m.reply_to_message.from_user.id,
                                m.reply_to_message.from_user.first_name)
-            await m.reply_text(f"↯︙تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) مميز عام بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -329,7 +329,7 @@ async def genspecialuser(c: Client, m: Message):
     try:
         if get_db_general_rtb("genspecial") is None:
             set_db_general_rtb("genspecial", chat_id_foruser, chat_name_foruser)
-            await m.reply_text(f"↯︙تم رفع العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦تم رفع العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) مميز عام بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             developer.append(chat_id_foruser)
@@ -337,12 +337,12 @@ async def genspecialuser(c: Client, m: Message):
         else:
             for dv in get_db_general_rtb("genspecial"):
                 if chat_id_foruser == dv[0]:
-                    await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+                    await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                        f"(tg://user?id={chat_id_foruser}) مميز عام بالفعل\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
             set_db_general_rtb("genspecial", chat_id_foruser, chat_name_foruser)
-            await m.reply_text(f"↯︙تم رفع العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦تم رفع العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) مميز عام بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -356,7 +356,7 @@ async def genspecialuser(c: Client, m: Message):
 async def ungenspecialrep(m: Message):
     try:
         if get_db_general_rtb("genspecial") is None:
-            await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) غير مميز عام اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
@@ -364,11 +364,11 @@ async def ungenspecialrep(m: Message):
             for dv in get_db_general_rtb("genspecial"):
                 if m.reply_to_message.from_user.id == dv[0]:
                     del_db_general_rtb("genspecial", m.reply_to_message.from_user.id)
-                    await m.reply_text(f"↯︙تم تنزيل العضو [{m.reply_to_message.from_user.first_name}]"
+                    await m.reply_text(f"🚦تم تنزيل العضو [{m.reply_to_message.from_user.first_name}]"
                                        f"(tg://user?id={m.reply_to_message.from_user.id}) من المميز عامين بنجاح\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
-            await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) غير مميز عام اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -386,7 +386,7 @@ async def ungenspecialuser(c: Client, m: Message):
     chat_name_foruser = result[1]
     try:
         if get_db_general_rtb("genspecial") is None:
-            await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) غير مميز عام اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
@@ -394,11 +394,11 @@ async def ungenspecialuser(c: Client, m: Message):
             for dv in get_db_general_rtb("genspecial"):
                 if chat_id_foruser == dv[0]:
                     del_db_general_rtb("genspecial", chat_id_foruser)
-                    await m.reply_text(f"↯︙تم تنزيل العضو [{chat_name_foruser}]"
+                    await m.reply_text(f"🚦تم تنزيل العضو [{chat_name_foruser}]"
                                        f"(tg://user?id={chat_id_foruser}) من المميز عامين بنجاح\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
-            await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) غير مميز عام اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
