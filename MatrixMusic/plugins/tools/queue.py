@@ -37,7 +37,7 @@ def get_duration(playing):
 
 
 @app.on_message(
-    command(["/queue", "اونلاين", "queue", "/الاغاني", "/اونلاين", "الاغاني"])
+    command(["/queue", "اونلاين", "queue", "/الاغاني", "قائمة الانتظار", "الاغاني"])
     & filters.group
     & ~BANNED_USERS
 )
