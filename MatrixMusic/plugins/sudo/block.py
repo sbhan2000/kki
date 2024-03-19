@@ -10,7 +10,7 @@ from MatrixMusic.utils.extraction import extract_user
 from config import BANNED_USERS
 
 
-@app.on_message(command(["بلوك"]) & SUDOERS)
+@app.on_message(command(["بلوك","حظر"]) & SUDOERS)
 @language
 async def useradd(client, message: Message, _):
     if not message.reply_to_message:
@@ -24,7 +24,7 @@ async def useradd(client, message: Message, _):
     await message.reply_text(_["block_2"].format(user.mention))
 
 
-@app.on_message(command(["الغاء بلوك"]) & SUDOERS)
+@app.on_message(command(["الغاء بلوك","الغاء الحظر"]) & SUDOERS)
 @language
 async def userdel(client, message: Message, _):
     if not message.reply_to_message:
@@ -38,7 +38,7 @@ async def userdel(client, message: Message, _):
     await message.reply_text(_["block_4"].format(user.mention))
 
 
-@app.on_message(command(["البلوك", "blockedusers", "المبلكين"]) & SUDOERS)
+@app.on_message(command(["البلوك", "blockedusers", "المحظورين"]) & SUDOERS)
 @language
 async def sudoers_list(client, message: Message, _):
     if not BANNED_USERS:
