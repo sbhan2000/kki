@@ -10,7 +10,7 @@ from MatrixMusic.utils.inline import close_markup
 from config import BANNED_USERS
 
 
-@app.on_message(command(["كمل", "كملي"]) & ~BANNED_USERS)
+@app.on_message(command(["كمل","استئناف"]) & ~BANNED_USERS)
 @AdminRightsCheck
 async def resume_com(cli, message: Message, _, chat_id):
     if await is_music_playing(chat_id):
