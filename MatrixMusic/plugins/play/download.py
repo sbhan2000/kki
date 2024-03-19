@@ -19,10 +19,10 @@ def remove_if_exists(path):
         os.remove(path)
 
 
-@app.on_message(command(["/song", "يوتيوب", "تحميل"]))
+@app.on_message(command(["/song", "تحميل"]))
 async def song_downloader(client, message: Message):
     query = " ".join(message.command[1:])
-    m = await message.reply_text("<b>⇜ جـارِ البحث عـن المقطـع الصـوتـي . . .</b>")
+    m = await message.reply_text("<b>🚦جـارِ البحث عـن المقطـع الصـوتـي . . .</b>")
     ydl_ops = {
         'format': 'bestaudio[ext=m4a]',
         'keepvideo': True,
@@ -42,22 +42,22 @@ async def song_downloader(client, message: Message):
         duration = results[0]["duration"]
 
     except Exception as e:
-        await m.edit("- لم يتم العثـور على نتائج ؟!\n- حـاول مجـدداً . . .")
+        await m.edit("**🚦لم يتم العثور على نتائج حاول مرة اخرى... ")
         print(str(e))
         return
-    await m.edit("<b>⇜ جـارِ التحميل  . . .</b>")
+    await m.edit("<b>🚦جـارِ التحميل  . . .</b>")
     try:
         with yt_dlp.YoutubeDL(ydl_ops) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"𖡃 ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʙʏ @{app.username} "
+        rep = f"🚦تم التحميل بواسطة @{app.username} "
         host = str(info_dict["uploader"])
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
-        await m.edit("<b>⇜ جـارِ الرفـع . . .</b>")
+        await m.edit("<b>🚦جـارِ الرفـع . . .</b>")
         await message.reply_audio(
             audio=audio_file,
             caption=rep,
