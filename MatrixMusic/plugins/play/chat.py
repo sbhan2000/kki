@@ -40,7 +40,7 @@ async def start_group_call(c: Client, m: Message):
     if assistant is None:
         await app.send_message(chat_id, "خطأ في المساعد")
         return
-    msg = await app.send_message(chat_id, "🚦جاري فتح ↫ ⦗ المكالمه المرئية ⦘")
+    msg = await app.send_message(chat_id, "↯︙جاري فتح ↫ ⦗ المكالمه المرئية ⦘")
     try:
         peer = await assistant.resolve_peer(chat_id)
         await assistant.invoke(
@@ -52,7 +52,7 @@ async def start_group_call(c: Client, m: Message):
                 random_id=assistant.rnd_id() // 9000000000,
             )
         )
-        await msg.edit_text("🚦تم فتح ↫ ⦗ المكالمه المرئية ⦘")
+        await msg.edit_text("↯︙تم فتح ↫ ⦗ المكالمه المرئية ⦘")
     except ChatAdminRequired:
       try:    
         await app.promote_chat_member(chat_id, assid, privileges=ChatPrivileges(
@@ -87,9 +87,9 @@ async def start_group_call(c: Client, m: Message):
             can_promote_members=False,
             ),
         )                              
-        await msg.edit_text("🚦تم فتح ↫ ⦗ المكالمه المرئية ⦘")
+        await msg.edit_text("↯︙تم فتح ↫ ⦗ المكالمه المرئية ⦘")
       except:
-         await msg.edit_text("🚦خلي البوت معاه صلاحية اضافة مشرفين والتحكم ف المحادثه الصوتيه او ارفع الحساب المساعد مشرف")
+         await msg.edit_text("↯︙خلي البوت معاه صلاحية اضافة مشرفين والتحكم ف المحادثه الصوتيه او ارفع الحساب المساعد مشرف")
 @app.on_message(filters.regex("^اقفل المكالمه$"))
 async def stop_group_call(c: Client, m: Message):
     chat_id = m.chat.id
@@ -99,7 +99,7 @@ async def stop_group_call(c: Client, m: Message):
     if assistant is None:
         await app.send_message(chat_id, "خطأ في المساعد")
         return
-    msg = await app.send_message(chat_id, "🚦جاري قفل ↫ ⦗ المكالمه المرئية ⦘")
+    msg = await app.send_message(chat_id, "↯︙جاري قفل ↫ ⦗ المكالمه المرئية ⦘")
     try:
         if not (
            group_call := (
@@ -108,7 +108,7 @@ async def stop_group_call(c: Client, m: Message):
         ):  
            return
         await assistant.invoke(DiscardGroupCall(call=group_call))
-        await msg.edit_text("🚦تم قفل ↫ ⦗ المكالمه المرئية ⦘")
+        await msg.edit_text("↯︙تم قفل ↫ ⦗ المكالمه المرئية ⦘")
     except Exception as e:
       if "GROUPCALL_FORBIDDEN" in str(e):
        try:    
@@ -141,8 +141,8 @@ async def stop_group_call(c: Client, m: Message):
             can_promote_members=False,
             ),
          )                              
-         await msg.edit_text("🚦تم قفل ↫ ⦗ المكالمه المرئية ⦘")
+         await msg.edit_text("↯︙تم قفل ↫ ⦗ المكالمه المرئية ⦘")
        except:
-         await msg.edit_text("🚦خلي البوت معاه صلاحية اضافة مشرفين والتحكم ف المحادثه الصوتيه او ارفع الحساب المساعد مشرف")
+         await msg.edit_text("↯︙خلي البوت معاه صلاحية اضافة مشرفين والتحكم ف المحادثه الصوتيه او ارفع الحساب المساعد مشرف")
 
   
