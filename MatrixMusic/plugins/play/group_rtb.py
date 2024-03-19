@@ -15,20 +15,20 @@ async def managerrep(m: Message):
         if get_db_manager(m.chat.id) is None:
             set_db_manager(m.reply_to_message.from_user.first_name,
                            m.reply_to_message.from_user.id, m.chat.id)
-            await m.reply_text(f"↯︙تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) مالك بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
         else:
             for cons in get_db_manager(m.chat.id):
                 if m.reply_to_message.from_user.id == cons[1]:
-                    await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+                    await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                        f"(tg://user?id={m.reply_to_message.from_user.id}) مالك بالفعل\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
             set_db_manager(m.reply_to_message.from_user.first_name,
                            m.reply_to_message.from_user.id, m.chat.id)
-            await m.reply_text(f"↯︙تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) مالك بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -48,20 +48,20 @@ async def manageruser(c: Client, m: Message):
         if get_db_manager(m.chat.id) is None:
             set_db_manager(chat_name_foruser,
                            chat_id_foruser, m.chat.id)
-            await m.reply_text(f"↯︙تم رفع العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦تم رفع العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) مالك بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
         else:
             for cons in get_db_manager(m.chat.id):
                 if chat_id_foruser == cons[1]:
-                    await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+                    await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                        f"(tg://user?id={chat_id_foruser}) مالك بالفعل\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
             set_db_manager(chat_name_foruser,
                            chat_id_foruser, m.chat.id)
-            await m.reply_text(f"↯︙تم رفع العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦تم رفع العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) مالك بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -75,7 +75,7 @@ async def manageruser(c: Client, m: Message):
 async def undmanagersrep(m: Message):
     try:
         if get_db_manager(m.chat.id) is None:
-            await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) غير مالك اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
@@ -83,11 +83,11 @@ async def undmanagersrep(m: Message):
             for dv in get_db_manager(m.chat.id):
                 if m.reply_to_message.from_user.id == dv[1]:
                     del_db_manager(m.reply_to_message.from_user.id, m.chat.id)
-                    await m.reply_text(f"↯︙تم تنزيل العضو [{m.reply_to_message.from_user.first_name}]"
+                    await m.reply_text(f"🚦تم تنزيل العضو [{m.reply_to_message.from_user.first_name}]"
                                        f"(tg://user?id={m.reply_to_message.from_user.id}) من المالكين بنجاح\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
-            await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) غير مالك اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -105,7 +105,7 @@ async def undmanagersuser(c: Client, m: Message):
     chat_name_foruser = result[1]
     try:
         if get_db_manager(m.chat.id) is None:
-            await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) غير مالك اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
@@ -113,11 +113,11 @@ async def undmanagersuser(c: Client, m: Message):
             for dv in get_db_manager(m.chat.id):
                 if chat_id_foruser == dv[1]:
                     del_db_manager(chat_id_foruser, m.chat.id)
-                    await m.reply_text(f"↯︙تم تنزيل العضو [{chat_name_foruser}]"
+                    await m.reply_text(f"🚦تم تنزيل العضو [{chat_name_foruser}]"
                                        f"(tg://user?id={chat_id_foruser}) من المالكين بنجاح\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
-            await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) غير مالك اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -133,20 +133,20 @@ async def managerrep_for_supmit(m: Message, firstname, user_id):
         if get_db_manager(m.chat.id) is None:
             set_db_manager(firstname,
                            user_id, m.chat.id)
-            await m.reply_text(f"↯︙تم رفع العضو [{firstname}]"
+            await m.reply_text(f"🚦تم رفع العضو [{firstname}]"
                                f"(tg://user?id={user_id}) مالك بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
         else:
             for cons in get_db_manager(m.chat.id):
                 if user_id == cons[1]:
-                    await m.reply_text(f"↯︙العضو [{firstname}]"
+                    await m.reply_text(f"🚦العضو [{firstname}]"
                                        f"(tg://user?id={user_id}) مالك بالفعل\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
             set_db_manager(firstname,
                            user_id, m.chat.id)
-            await m.reply_text(f"↯︙تم رفع العضو [{firstname}]"
+            await m.reply_text(f"🚦تم رفع العضو [{firstname}]"
                                f"(tg://user?id={user_id}) مالك بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -166,7 +166,7 @@ async def addadmingrouprep(c: Client, m: Message):
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton("تعديل صلاحياته", callback_data="editPrem " + str(m.from_user.id) + " " + str(iduser))],
     ])
-    await m.reply_text(f"↯︙تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
+    await m.reply_text(f"🚦تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
                        f"(tg://user?id={m.reply_to_message.from_user.id}) مشرف فى الجروب بنجاح\n↯",
                        reply_to_message_id=m.message_id, parse_mode="Markdown", reply_markup=keyboard)
     return
@@ -182,7 +182,7 @@ async def addadmingroupuser(c: Client, m: Message):
         [InlineKeyboardButton("تعديل صلاحياته",
                               callback_data="editPrem " + str(m.from_user.id) + " " + str(chat_id_foruser))],
     ])
-    await m.reply_text(f"↯︙تم رفع العضو [{chat_name_foruser}]"
+    await m.reply_text(f"🚦تم رفع العضو [{chat_name_foruser}]"
                        f"(tg://user?id={chat_id_foruser}) مشرف فى الجروب بنجاح\n↯",
                        reply_to_message_id=m.message_id, parse_mode="Markdown", reply_markup=keyboard)
     return
@@ -204,7 +204,7 @@ async def editprem(c: Client, m: CallbackQuery):
         [InlineKeyboardButton("صلاحيه الكتم والحظر فقط",
                               callback_data="editPremSome " + str(m.from_user.id) + " " + str(int(a[2])))],
     ])
-    await m.message.edit_text("↯︙تم اعطاء الصلاحيه\n↯", reply_markup=keyboard, disable_web_page_preview=True)
+    await m.message.edit_text("🚦تم اعطاء الصلاحيه\n↯", reply_markup=keyboard, disable_web_page_preview=True)
 
 
 @Client.on_callback_query(filters.regex("^editPremAll (\\d+) (\\d+)$"))
@@ -301,7 +301,7 @@ async def editPremAln(c: Client, m: CallbackQuery):
 
 async def unadmingroiprep(c: Client, m: Message):
     await c.promote_chat_member(m.chat.id, m.reply_to_message.from_user.id, False, False)
-    await m.reply_text(f"↯︙تم تنزيل العضو [{m.reply_to_message.from_user.first_name}]"
+    await m.reply_text(f"🚦تم تنزيل العضو [{m.reply_to_message.from_user.first_name}]"
                        f"(tg://user?id={m.reply_to_message.from_user.id}) من المشرفين بنجاح\n↯",
                        reply_to_message_id=m.message_id, parse_mode="Markdown")
     return
@@ -313,7 +313,7 @@ async def unadmingroipuser(c: Client, m: Message):
     chat_id_foruser = result[0]
     chat_name_foruser = result[1]
     await c.promote_chat_member(m.chat.id, chat_id_foruser, False, False)
-    await m.reply_text(f"↯︙تم تنزيل العضو [{chat_name_foruser}]"
+    await m.reply_text(f"🚦تم تنزيل العضو [{chat_name_foruser}]"
                        f"(tg://user?id={chat_id_foruser}) من المشرفين بنجاح\n↯",
                        reply_to_message_id=m.message_id, parse_mode="Markdown")
     return
@@ -327,20 +327,20 @@ async def addconstractorrep(m: Message):
         if get_db_constractors(m.chat.id) is None:
             set_db_constractors(m.reply_to_message.from_user.first_name,
                                 m.reply_to_message.from_user.id, m.chat.id)
-            await m.reply_text(f"↯︙تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) منشئ بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
         else:
             for cons in get_db_constractors(m.chat.id):
                 if m.reply_to_message.from_user.id == cons[1]:
-                    await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+                    await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                        f"(tg://user?id={m.reply_to_message.from_user.id}) منشئ بالفعل\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
             set_db_constractors(m.reply_to_message.from_user.first_name,
                                 m.reply_to_message.from_user.id, m.chat.id)
-            await m.reply_text(f"↯︙تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) منشئ بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -360,20 +360,20 @@ async def addconstractoruser(c: Client, m: Message):
         if get_db_constractors(m.chat.id) is None:
             set_db_constractors(chat_name_foruser,
                                 chat_id_foruser, m.chat.id)
-            await m.reply_text(f"↯︙تم رفع العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦تم رفع العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) منشئ بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
         else:
             for cons in get_db_constractors(m.chat.id):
                 if chat_id_foruser == cons[1]:
-                    await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+                    await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                        f"(tg://user?id={chat_id_foruser}) منشئ بالفعل\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
             set_db_constractors(chat_name_foruser,
                                 chat_id_foruser, m.chat.id)
-            await m.reply_text(f"↯︙تم رفع العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦تم رفع العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) منشئ بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -387,7 +387,7 @@ async def addconstractoruser(c: Client, m: Message):
 async def unconstractorrep(m: Message):
     try:
         if get_db_constractors(m.chat.id) is None:
-            await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) غير منشئ اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
@@ -395,11 +395,11 @@ async def unconstractorrep(m: Message):
             for dv in get_db_constractors(m.chat.id):
                 if m.reply_to_message.from_user.id == dv[1]:
                     del_db_constractors(m.reply_to_message.from_user.id, m.chat.id)
-                    await m.reply_text(f"↯︙تم تنزيل العضو [{m.reply_to_message.from_user.first_name}]"
+                    await m.reply_text(f"🚦تم تنزيل العضو [{m.reply_to_message.from_user.first_name}]"
                                        f"(tg://user?id={m.reply_to_message.from_user.id}) من المنشئين بنجاح\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
-            await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) غير منشئ اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -417,7 +417,7 @@ async def unconstractoruser(c: Client, m: Message):
     chat_name_foruser = result[1]
     try:
         if get_db_constractors(m.chat.id) is None:
-            await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) غير منشئ اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
@@ -425,11 +425,11 @@ async def unconstractoruser(c: Client, m: Message):
             for dv in get_db_constractors(m.chat.id):
                 if chat_id_foruser == dv[1]:
                     del_db_constractors(chat_id_foruser, m.chat.id)
-                    await m.reply_text(f"↯︙تم تنزيل العضو [{chat_name_foruser}]"
+                    await m.reply_text(f"🚦تم تنزيل العضو [{chat_name_foruser}]"
                                        f"(tg://user?id={chat_id_foruser}) من المنشئين بنجاح\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
-            await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) غير منشئ اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -448,20 +448,20 @@ async def addadminrep(m: Message):
         if get_db_admin(m.chat.id) is None:
             set_db_admin(m.reply_to_message.from_user.first_name,
                          m.reply_to_message.from_user.id, m.chat.id)
-            await m.reply_text(f"↯︙تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) ادمن بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
         else:
             for cons in get_db_admin(m.chat.id):
                 if m.reply_to_message.from_user.id == cons[1]:
-                    await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+                    await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                        f"(tg://user?id={m.reply_to_message.from_user.id}) ادمن بالفعل\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
             set_db_admin(m.reply_to_message.from_user.first_name,
                          m.reply_to_message.from_user.id, m.chat.id)
-            await m.reply_text(f"↯︙تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) ادمن بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -481,20 +481,20 @@ async def addadminuser(c: Client, m: Message):
         if get_db_admin(m.chat.id) is None:
             set_db_admin(chat_name_foruser,
                          chat_id_foruser, m.chat.id)
-            await m.reply_text(f"↯︙تم رفع العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦تم رفع العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) ادمن بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
         else:
             for cons in get_db_admin(m.chat.id):
                 if chat_id_foruser == cons[1]:
-                    await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+                    await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                        f"(tg://user?id={chat_id_foruser}) ادمن بالفعل\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
             set_db_admin(chat_name_foruser,
                          chat_id_foruser, m.chat.id)
-            await m.reply_text(f"↯︙تم رفع العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦تم رفع العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) ادمن بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -508,7 +508,7 @@ async def addadminuser(c: Client, m: Message):
 async def unadminrep(m: Message):
     try:
         if get_db_admin(m.chat.id) is None:
-            await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) غير ادمن اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
@@ -516,11 +516,11 @@ async def unadminrep(m: Message):
             for dv in get_db_admin(m.chat.id):
                 if m.reply_to_message.from_user.id == dv[1]:
                     del_db_admin(m.reply_to_message.from_user.id, m.chat.id)
-                    await m.reply_text(f"↯︙تم تنزيل العضو [{m.reply_to_message.from_user.first_name}]"
+                    await m.reply_text(f"🚦تم تنزيل العضو [{m.reply_to_message.from_user.first_name}]"
                                        f"(tg://user?id={m.reply_to_message.from_user.id}) من الادمنيه بنجاح\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
-            await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) غير ادمن اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -538,7 +538,7 @@ async def unadminuser(c: Client, m: Message):
     chat_name_foruser = result[1]
     try:
         if get_db_admin(m.chat.id) is None:
-            await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) غير ادمن اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
@@ -546,11 +546,11 @@ async def unadminuser(c: Client, m: Message):
             for dv in get_db_admin(m.chat.id):
                 if chat_id_foruser == dv[1]:
                     del_db_admin(chat_id_foruser, m.chat.id)
-                    await m.reply_text(f"↯︙تم تنزيل العضو [{chat_name_foruser}]"
+                    await m.reply_text(f"🚦تم تنزيل العضو [{chat_name_foruser}]"
                                        f"(tg://user?id={chat_id_foruser}) من الادمنيه بنجاح\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
-            await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) غير ادمن اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -570,7 +570,7 @@ async def addadminrep_for_supmit(m: Message, firstname, chad_id):
         else:
             for cons in get_db_admin(m.chat.id):
                 if chad_id == cons[1]:
-                    await m.reply_text(f"↯︙العضو [{firstname}]"
+                    await m.reply_text(f"🚦العضو [{firstname}]"
                                        f"(tg://user?id={chad_id}) ادمن بالفعل\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
@@ -592,20 +592,20 @@ async def addspecialrep(m: Message):
         if get_db_special(m.chat.id) is None:
             set_db_special(m.reply_to_message.from_user.first_name,
                            m.reply_to_message.from_user.id, m.chat.id)
-            await m.reply_text(f"↯︙تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) مميز بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
         else:
             for cons in get_db_special(m.chat.id):
                 if m.reply_to_message.from_user.id == cons[1]:
-                    await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+                    await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                        f"(tg://user?id={m.reply_to_message.from_user.id}) مميز بالفعل\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
             set_db_special(m.reply_to_message.from_user.first_name,
                            m.reply_to_message.from_user.id, m.chat.id)
-            await m.reply_text(f"↯︙تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦تم رفع العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) مميز بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -625,20 +625,20 @@ async def addspecialuser(c: Client, m: Message):
         if get_db_special(m.chat.id) is None:
             set_db_special(chat_name_foruser,
                            chat_id_foruser, m.chat.id)
-            await m.reply_text(f"↯︙تم رفع العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦تم رفع العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) مميز بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
         else:
             for cons in get_db_special(m.chat.id):
                 if chat_id_foruser == cons[1]:
-                    await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+                    await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                        f"(tg://user?id={chat_id_foruser}) مميز بالفعل\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
             set_db_special(chat_name_foruser,
                            chat_id_foruser, m.chat.id)
-            await m.reply_text(f"↯︙تم رفع العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦تم رفع العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) مميز بنجاح\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -652,7 +652,7 @@ async def addspecialuser(c: Client, m: Message):
 async def unspecialrep(m: Message):
     try:
         if get_db_special(m.chat.id) is None:
-            await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) غير مميز اصل\n↯ا",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
@@ -660,11 +660,11 @@ async def unspecialrep(m: Message):
             for dv in get_db_special(m.chat.id):
                 if m.reply_to_message.from_user.id == dv[1]:
                     del_db_special(m.reply_to_message.from_user.id, m.chat.id)
-                    await m.reply_text(f"↯︙تم تنزيل العضو [{m.reply_to_message.from_user.first_name}]"
+                    await m.reply_text(f"🚦تم تنزيل العضو [{m.reply_to_message.from_user.first_name}]"
                                        f"(tg://user?id={m.reply_to_message.from_user.id}) من المميزين بنجاح\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
-            await m.reply_text(f"↯︙العضو [{m.reply_to_message.from_user.first_name}]"
+            await m.reply_text(f"🚦العضو [{m.reply_to_message.from_user.first_name}]"
                                f"(tg://user?id={m.reply_to_message.from_user.id}) غير مميز اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
@@ -682,7 +682,7 @@ async def unspecialuser(c: Client, m: Message):
     chat_name_foruser = result[1]
     try:
         if get_db_special(m.chat.id) is None:
-            await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) غير مميز اصل\n↯ا",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
             return
@@ -690,11 +690,11 @@ async def unspecialuser(c: Client, m: Message):
             for dv in get_db_special(m.chat.id):
                 if chat_id_foruser == dv[1]:
                     del_db_special(chat_id_foruser, m.chat.id)
-                    await m.reply_text(f"↯︙تم تنزيل العضو [{chat_name_foruser}]"
+                    await m.reply_text(f"🚦تم تنزيل العضو [{chat_name_foruser}]"
                                        f"(tg://user?id={chat_id_foruser}) من المميزين بنجاح\n↯",
                                        reply_to_message_id=m.message_id, parse_mode="Markdown")
                     return
-            await m.reply_text(f"↯︙العضو [{chat_name_foruser}]"
+            await m.reply_text(f"🚦العضو [{chat_name_foruser}]"
                                f"(tg://user?id={chat_id_foruser}) غير مميز اصلا\n↯",
                                reply_to_message_id=m.message_id, parse_mode="Markdown")
 
