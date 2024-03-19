@@ -43,15 +43,15 @@ async def inline_query_handler(client, query):
                 ]
             )
             searched_text = f"""
-↯︙<b>العنـوان :</b> <a href={link}>{title}</a>
+🚦<b>العنـوان :</b> <a href={link}>{title}</a>
 
-↯︙<b>المـدة :</b> {duration} ᴍɪɴᴜᴛᴇs
-↯︙<b>المشاهـدات :</b> <code>{views}</code>
-↯︙<b>القنـاة :</b> <a href={channellink}>{channel}</a>
-↯︙<b>بواسطـة :</b> {published}
+🚦<b>المـدة :</b> {duration} دقيقة
+🚦<b>المشاهـدات :</b> <code>{views}</code>
+🚦<b>القنـاة :</b> <a href={channellink}>{channel}</a>
+🚦<b>بواسطـة :</b> {published}
 
 
-<u><b>↯︙تم البحث انلايـن بواسطـة {app.name}</b></u>"""
+<u><b>🚦تم البحث انلايـن بواسطـة {app.name}</b></u>"""
             answers.append(
                 InlineQueryResultPhoto(
                     photo_url=thumbnail,
