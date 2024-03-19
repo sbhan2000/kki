@@ -31,19 +31,20 @@ async def checker(_: Client, message: Message):
 
 
 
+MUST_JOIN = "{channel}"
 #------------------------
 @app.on_message( filters.incoming & filters.private, group=-1)
-async def checker(_: Client, message: Message):
-    if not channel:
+async def must_join_channel(app: Client, msg: Message):
+    if not MUST_JOIN:
         return
     try:
         try:
-            await app.get_chat_member(channel, msg.from_user.id)
+            await app.get_chat_member(MUST_JOIN, msg.from_user.id)
         except UserNotParticipant:
-            if channel.isalpha():
-                link = "https://t.me/" + channel
+            if MUST_JOIN.isalpha():
+                link = "https://t.me/" + MUST_JOIN
             else:
-                chat_info = await app.get_chat(channel)
+                chat_info = await app.get_chat(MUST_JOIN)
                 link = chat_info.invite_link
             try:
                 await msg.reply(f"عذراً عزيزي {user} عليك الإشتراك بقناة البوت اولا.",
@@ -59,4 +60,4 @@ async def checker(_: Client, message: Message):
             except ChatWriteForbidden:
                 pass
     except ChatAdminRequired:
-        print(f"ارفع البوت مشࢪف في القناة: {channel} !")
+        print(f"ارفع البوت مشࢪف في القناة: {MUST_JOIN} !")
