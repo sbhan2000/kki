@@ -30,7 +30,7 @@ async def quran(c,msg):
         list.append(ikb(name, callback_data = f"play-{i-1}"))
     keyboard.append(list)
     keyboard.append([ikb(". التالي .", callback_data = "next-1")])
-    await message.reply_photo(
+    await msg.reply_photo(
         photo=f"https://telegra.ph/file/14c7948ad180050fe16e4.jpg",
         caption=f"""↯︙اهلا بك في قائمة اسماء قراء القران الكريم.""", reply_markup = ikm(keyboard))
 
