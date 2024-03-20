@@ -22,6 +22,11 @@
         "value": "",
         "required": true
       },
+      "OWNER": {
+        "description": "⦗ يوزر المطـــور ⦘ ↫ مطـــور بـــوت الميـــوزك",
+        "value": "",
+        "required": true
+      },
       "STRING_SESSION": {
         "description": "⦗ V2 ⦘ ↫ كـود جلسـة الحسـاب المساعـد لـ الميـوزك",
         "value": "",
