@@ -6,7 +6,7 @@ from strings.filters import command
 from MatrixMusic import app
 
 @app.on_message(command(["تليجراف ميديا","ميديا","تلغراف ميديا","تليكراف ميديا"]))
-async def get_link_group(client, message):
+async def get_link_group(client, message: Message):
     try:
         text = await message.reply("↯︙يعالج ...")
         async def progress(current, total):
