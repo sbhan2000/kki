@@ -34,13 +34,8 @@ async def yas(client, message):
 
 
 
-@app.on_message(filters.command("المالك"))
+@app.on_message(command("المالك"))
 async def yas(client, message):
-  try:
-        await message.delete()
-    except:
-        pass
-    try:
     usr = await client.get_chat("{OWNER}")
     name = usr.first_name
     photo = await app.download_media(usr.photo.big_file_id)
