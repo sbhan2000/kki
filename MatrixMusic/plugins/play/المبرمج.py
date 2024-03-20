@@ -16,7 +16,7 @@ from random import  choice, randint
                 
 
 
-@app.on_message(filters.command(["مبرمج","المبرمج"))
+@app.on_message(filters.command(["مبرمج","المبرمج"]))
 async def yas(client, message):
     usr = await client.get_chat("ah_2_v")
     name = usr.first_name
