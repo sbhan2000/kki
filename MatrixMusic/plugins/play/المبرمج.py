@@ -39,7 +39,7 @@ async def yas(client, message):
 
 
 @app.on_message(
-    command(["المالك")
+    command("المالك")
     & filters.group 
     & filters.private 
 )
