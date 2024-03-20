@@ -41,7 +41,6 @@ async def yas(client, message):
     except:
         pass
     try:
-        if len(message.command) < 2:
     usr = await client.get_chat("{OWNER}")
     name = usr.first_name
     photo = await app.download_media(usr.photo.big_file_id)
