@@ -5,22 +5,21 @@ from pyrogram import idle
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from MatrixMusic import LOGGER, app, userbot
-from MatrixMusic.core.call import Zelzaly
-from MatrixMusic.misc import sudo
-from MatrixMusic.plugins import ALL_MODULES
-from MatrixMusic.utils.database import get_banned_users, get_gbanned
 from MatrixMusic import (
     ASS_ID,
     ASS_NAME,
     ASS_USERNAME,
-    BOT_ID,
-    BOT_NAME,
-    BOT_USERNAME,
+    LOGGER,
     SUNAME,
+    app,
     app2,
-    pytgcalls,
+    userbot,
 )
+from MatrixMusic import LOGGER, app, userbot, pp2
+from MatrixMusic.core.call import Zelzaly
+from MatrixMusic.misc import sudo
+from MatrixMusic.plugins import ALL_MODULES
+from MatrixMusic.utils.database import get_banned_users, get_gbanned
 from config import BANNED_USERS
 
 
@@ -76,17 +75,6 @@ async def init():
         LOGGER.error(
             f"{ASS_NAME} failed to send message at @{SUNAME}, please go & check."
         )
-
-    await app2.send_message(BOT_USERNAME, "/start")
-
-    LOGGER.info(f"[•] Bot Started As {BOT_NAME}.")
-    LOGGER.info(f"[•] Assistant Started As {ASS_NAME}.")
-
-    LOGGER.info(
-        "[•] \x53\x74\x61\x72\x74\x69\x6e\x67\x20\x50\x79\x54\x67\x43\x61\x6c\x6c\x73\x20\x43\x6c\x69\x65\x6e\x74\x2e\x2e\x2e"
-    )
-    await pytgcalls.start()
-    await idle()
 
 
 
