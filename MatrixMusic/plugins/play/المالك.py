@@ -6,6 +6,7 @@ import aiohttp
 from pyrogram import filters
 from pyrogram import Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
+from MatrixMusic.filters import command
 from MatrixMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 from MatrixMusic import app
 from asyncio import gather
@@ -14,7 +15,7 @@ from pyrogram.errors import FloodWait
 
 
 
-@app.on_message(command(["المالك"]) & filters.group )
+@app.on_message(command("المالك") & filters.group )
 async def gak_owne(client: Client, message: Message):
       if len(message.command) >= 2:
          return 
