@@ -5,16 +5,6 @@ from pyrogram import idle
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from MatrixMusic import (
-    ASS_ID,
-    ASS_NAME,
-    ASS_USERNAME,
-    LOGGER,
-    SUNAME,
-    app,
-    app2,
-    userbot,
-)
 from MatrixMusic import LOGGER, app, userbot, pp2
 from MatrixMusic.core.call import Zelzaly
 from MatrixMusic.misc import sudo
