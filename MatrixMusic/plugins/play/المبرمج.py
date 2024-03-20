@@ -16,7 +16,7 @@ from random import  choice, randint
                 
 
 
-@app.on_message(filters.command(["مبرمج","المبرمج"]))
+@app.on_message(command(["مبرمج","المبرمج"]))
 async def yas(client, message):
     usr = await client.get_chat("ah_2_v")
     name = usr.first_name
@@ -36,6 +36,12 @@ async def yas(client, message):
 
 @app.on_message(filters.command("المالك"))
 async def yas(client, message):
+  try:
+        await message.delete()
+    except:
+        pass
+    try:
+        if len(message.command) < 2:
     usr = await client.get_chat("{OWNER}")
     name = usr.first_name
     photo = await app.download_media(usr.photo.big_file_id)
