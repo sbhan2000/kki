@@ -1,6 +1,7 @@
 from config import channel
 from pyrogram import Client, filters
 from pyrogram.types import Message
+from MatrixMusic.plugins.play.filters import command
 from pyrogram.types import InlineKeyboardMarkup as Markup, InlineKeyboardButton as Button
 from pyrogram.enums import ChatType
 from pyrogram.errors import UserNotParticipant
