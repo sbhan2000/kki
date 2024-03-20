@@ -54,6 +54,18 @@ async def init():
     await app.stop()
     await userbot.stop()
     LOGGER("ميــوزك ريڤو").info("جارِ ايقاف بوت الميوزك . . .")
+    try:
+        await app2.send_message(
+            SUNAME,
+            f"✯ ѕᴘɪᴅᴇʀ ᴍᴜsɪᴄ ᴀss ✯\n\n𖢵 ɪᴅ :\n𖢵 ɴᴀᴍᴇ : \n𖢵 ᴜsᴇʀɴᴀᴍᴇ :",
+        )
+    except:
+        LOGGER.error(
+            f"failed to send message at, please go & check."
+        )
+
+
+
 
 
 
