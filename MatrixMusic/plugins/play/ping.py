@@ -14,6 +14,7 @@ from io import BytesIO
 from PIL import Image, ImageEnhance 
 from time import time
 import asyncio
+import config
 from MatrixMusic.utils.extraction import extract_user
 
 # Define a dictionary to track the last message timestamp for each user
@@ -67,29 +68,29 @@ async def ping_com(client, message: Message, _):
         user_last_message_time[user_id] = current_time
 
     PING_IMG_URL = "https://telegra.ph/file/37b57c6aaaa793bba055a.jpg"
-    captionss = "**🚦بدء قياس سرعة استجابة البوت...**"
+    captionss = "↯︙بدء قياس سرعة استجابة البوت..."
     response = await message.reply_photo(PING_IMG_URL, caption=(captionss))
     await asyncio.sleep(1)
-    await response.edit_caption("**🚦انتظر قليلا جاࢪي تجهيز البيانات.**")
+    await response.edit_caption("↯︙انتظر قليلا جاࢪي تجهيز البيانات.")
     await asyncio.sleep(1)
-    await response.edit_caption("**🚦انتظر قليلا جاࢪي تجهيز البيانات..**")
+    await response.edit_caption("↯︙انتظر قليلا جاࢪي تجهيز البيانات..**")
     await asyncio.sleep(1)
-    await response.edit_caption("**🚦انتظر قليلا جاࢪي تجهيز البيانات...**")
+    await response.edit_caption("↯︙انتظر قليلا جاࢪي تجهيز البيانات...")
     await asyncio.sleep(1.5)
-    await response.edit_caption("**🚦انتظر قليلا جاࢪي تجهيز البيانات..**")
+    await response.edit_caption("↯︙انتظر قليلا جاࢪي تجهيز البيانات..")
     await asyncio.sleep(2)
-    await response.edit_caption("**🚦انتظر قليلا جاࢪي تجهيز البيانات...**")
+    await response.edit_caption("↯︙انتظر قليلا جاࢪي تجهيز البيانات...")
     await asyncio.sleep(2)
-    await response.edit_caption("**🚦جاࢪي رفع بيانات البوت...**")
+    await response.edit_caption("↯︙جاࢪي رفع بيانات البوت...")
     await asyncio.sleep(3)
-    await response.edit_caption("**🚦جاࢪي تحميل بيانات البوت...**")
+    await response.edit_caption("↯︙جاࢪي تحميل بيانات البوت...")
     start = datetime.now()
     pytgping = await Zelzaly.ping()
     UP, CPU, RAM, DISK = await bot_sys_stats()
     resp = (datetime.now() - start).microseconds / 1000
     text =  _["ping_2"].format(resp, app.name, UP, RAM, CPU, DISK, pytgping)
     carbon = await make_carbon(text)
-    captions = "**🚦تم الانتهاء من بيانات البوت لسرعة استجابته للاوامر⚡❤**"
+    captions = "**↯︙اليك بيانات سرعة استجابة البوت للاوامر. ⚡❤**"
     await message.reply_photo((carbon), caption=captions,
     reply_markup=InlineKeyboardMarkup(
             [
@@ -102,15 +103,14 @@ async def ping_com(client, message: Message, _):
         ],
         [
             InlineKeyboardButton(
-                text="✦ ɢʀᴏᴜᴘ ✦", url=f"https://t.me/TG_FRIENDSS",
-            ),
-            InlineKeyboardButton(
-                text="✧ ᴍᴏʀᴇ ✧", url=f"https://t.me/Zelzaly_CREATORS",
-            )
-        ],
-        [
-            InlineKeyboardButton(
-                text="الاوامر", url=f"https://t.me/{app.username}?start=help"
+                        " الدعم ", url=config.SUPPORT_CHAT
+                    ),
+                    InlineKeyboardButton(
+                        " القناة ", url=config.SUPPORT_CHANNEL),
+                ],
+                [
+                    InlineKeyboardButton(
+                        " الـمطور ", user_id=config.OWNER_ID 
             )
         ],
     ]
