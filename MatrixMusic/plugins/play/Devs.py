@@ -61,7 +61,7 @@ async def yas(client, message):
     command(["مالك","المالك"])
     & filters.group
 )
-async def gak_owne(client: Client, message: Message):
+async def yas(client, message): 
       if len(message.command) >= 2:
          return 
       else:
