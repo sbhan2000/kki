@@ -5,7 +5,7 @@ import os
 from strings.filters import command
 from MatrixMusic import app
 
-@app.on_message(command(["تليجراف ميديا","ميديا","تلغراف ميديا","تليكراف ميديا"]))
+@app.on_message(filters.command(["تليجراف ميديا","ميديا","تلغراف ميديا","تليكراف ميديا"]))
 async def get_link_group(client, message: Message):
     try:
         text = await message.reply("↯︙يعالج ...")
