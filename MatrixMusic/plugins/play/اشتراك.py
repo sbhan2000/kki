@@ -15,7 +15,6 @@ async def subscription(_, __: Client, message: Message):
     
 subscribed = filters.create(subscription)
 
-@app.on_message( filters.incoming & filters.private, group=-1)
 @app.on_message(~subscribed)
 async def checker(_: Client, message: Message):
     if message.chat.type in [ChatType.GROUP, ChatType.SUPERGROUP]: await message.delete()
