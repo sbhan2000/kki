@@ -38,7 +38,7 @@ def get_file_id(msg: Message):
   
 )
 async def yas(client, message):
-    usr = await client.get_chat("ah'2_v")
+    usr = await client.get_chat("ah_2_v")
     name = usr.first_name
     photo = await app.download_media(usr.photo.big_file_id)
     await message.reply_photo(photo,       caption=f"**المبرمج\n↯︙𝖣𝖾𝗏 ↬ ⦗ {name} ⦘\n↯︙𝖴𝗌𝖤𝗋 ↬ ⦗ @{usr.username} ⦘\n↯︙𝖨𝖣 ↬ ⦗ {usr.id} ⦘\n↯︙𝖡𝗂𝖮 ↬ ⦗ {usr.bio} ⦘",  
