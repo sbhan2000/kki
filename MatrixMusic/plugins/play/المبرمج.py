@@ -1,5 +1,5 @@
 import asyncio
-from config import owner
+from config import OWNER
 import os
 import time
 import requests
@@ -44,7 +44,7 @@ async def yas(client, message):
     & filters.private 
 )
 async def yas(client, message):
-    usr = await client.get_chat("{owner}")
+    usr = await client.get_chat("{OWNER}")
     name = usr.first_name
     photo = await app.download_media(usr.photo.big_file_id)
     await message.reply_photo(photo,       caption=f"↯︙𝙽𝙰𝙼𝙴 :{name}\n↯︙𝚄𝚂𝙴𝚁 :@{usr.username}\n↯︙𝙸𝙳 :`{usr.id}`\n↯︙𝙱𝙸𝙾 :{usr.bio}", 
