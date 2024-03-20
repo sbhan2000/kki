@@ -27,7 +27,7 @@ from config import BANNED_USERS, lyrical
 
 
 @app.on_message(
-    command(
+    filters.command(
         [
             "شغل",
             "تشغيل",
