@@ -5,7 +5,7 @@ from pyrogram import idle
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from MatrixMusic import LOGGER, app, userbot, app2
+from MatrixMusic import LOGGER, app, userbot
 from MatrixMusic.core.call import Zelzaly
 from MatrixMusic.misc import sudo
 from MatrixMusic.plugins import ALL_MODULES
@@ -53,19 +53,7 @@ async def init():
     await idle()
     await app.stop()
     await userbot.stop()
-    LOGGER("ميــوزك ريڤو").info("جارِ ايقاف بوت الميوزك . . .")
-    try:
-        await app2.send_message(
-            SUNAME,
-            f"✯ ѕᴘɪᴅᴇʀ ᴍᴜsɪᴄ ᴀss ✯\n\n𖢵 ɪᴅ :\n𖢵 ɴᴀᴍᴇ : \n𖢵 ᴜsᴇʀɴᴀᴍᴇ :",
-        )
-    except:
-        LOGGER.error(
-            f"failed to send message at, please go & check."
-        )
-
-
-
+    LOGGER("ميــوزك ريڤو").info("جارِ ايقاف بوت الميوزك . . .") 
 
 
 
