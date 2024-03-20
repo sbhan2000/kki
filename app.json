@@ -27,6 +27,21 @@
         "value": "",
         "required": true
       },
+      "START_IMG_URL": {
+        "description": "⦗ صوره برابط تلجراف ⦘ ↫ ضع صورة ستارت للبوت",
+        "value": "",
+        "required": true
+      },
+      "SUPPORT_CHANNEL": {
+        "description": "ضع يوزر قناتك بدون @",
+        "value": "",
+        "required": true
+      },
+      "SUPPORT_CHAT": {
+        "description": "ضع يوزر الكروب بدون @",
+        "value": "",
+        "required": true
+      },
       "STRING_SESSION": {
         "description": "⦗ V2 ⦘ ↫ كـود جلسـة الحسـاب المساعـد لـ الميـوزك",
         "value": "",
@@ -48,7 +63,7 @@
         "required": true
     },
     "channel": {
-      "description": "Your additional environment variable",
+      "description": "ضع يوزر قنات الاشتراك بدون @ وارف البوت فيها",
       "value": "",
       "required": false
     }
