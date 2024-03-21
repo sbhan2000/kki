@@ -22,5 +22,3 @@ async def send_quran_verse(c: Client, m: Message):
                     print(e)
         
         await asyncio.sleep(86400)
-
-client.run()
