@@ -10,9 +10,9 @@ from config import BANNED_USERS
 @app.on_callback_query(filters.regex("LiveStream") & ~BANNED_USERS)
 @languageCB
 async def play_live_stream(client, CallbackQuery, _):
-    callback_data = CallbackQuery.data.strip()
-    callback_request = callback_data.split(None, 1)[1]
+    callback_data = CallbackQuery.data.strip()      
     user_mention = message.from_user.mention if message.from_user else "المشـرف"
+    callback_request = callback_data.split(None, 1)[1]
     vidid, user_id, mode, cplay, fplay = callback_request.split("|")
     if CallbackQuery.from_user.id != int(user_id):
         try:
