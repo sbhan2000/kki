@@ -32,7 +32,7 @@ async def quran(c,msg):
     keyboard.append([ikb(". التالي .", callback_data = "next-1")])
     await msg.reply_photo(
         photo=f"https://telegra.ph/file/66dd6cfeb827ea98a9a84.png",
-        caption=f"""↯︙اهلا بك في قائمة اسماء قراء القران الكريم.""", reply_markup = ikm(keyboard))
+        caption=f"""↯︙اهلا بك في قائمة اسماء سور القران الكريم.""", reply_markup = ikm(keyboard))
 
 @app.on_callback_query(filters.regex("next") & ~BANNED_USERS)
 async def next_quran(c,cq):
