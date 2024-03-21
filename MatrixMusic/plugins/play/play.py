@@ -25,7 +25,6 @@ from MatrixMusic.utils.inline import (
 from MatrixMusic.utils.logger import play_logs
 from MatrixMusic.utils.stream.stream import stream
 from config import BANNED_USERS, lyrical
-from strings.filters import subscribed
 
 
 @app.on_message(
