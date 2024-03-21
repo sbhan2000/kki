@@ -46,4 +46,4 @@ def getAdhan(address: str) -> Union[str, bool]:
 # 𝗪𝗥𝗜𝗧𝗧𝗘𝗡 𝗕𝗬 : @BENN_DEV
 # 𝗦𝗢𝗨𝗥𝗖𝗘 : @BENfiles
 
-app.run()
+
