@@ -44,8 +44,7 @@ async def make_carbon(code):
     output_image.name = "carbon.png"
     return output_image
 
-@app.on_message(filters.command(["ping","بنك","بينج"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]) & ~BANNED_USERS)
-@language
+@app.on_message(filters.command(["ping","بنك","بينج"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 async def ping_com(client, message: Message, _):
     user_id = message.from_user.id
     current_time = time()
