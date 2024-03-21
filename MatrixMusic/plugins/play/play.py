@@ -46,7 +46,7 @@ from strings.filters import subscribed
             "/cvplayforce",
         ]
     )
-    & subscribed, group=111
+    & ~BANNED_USERS
 )
 @PlayWrapper
 async def play_commnd(
