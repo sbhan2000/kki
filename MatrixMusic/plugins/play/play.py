@@ -27,7 +27,25 @@ from MatrixMusic.utils.stream.stream import stream
 from config import BANNED_USERS, lyrical
 
 
-@app.on_message(filters.command(["تشغيل"],""))
+@app.on_message(
+    command(
+        [
+            "شغل",
+            "تشغيل",
+            "تش",
+            "/play",
+            "/vplay",
+            " فيديو", 
+            "/cplay",
+            "/cvplay",
+            "/playforce",
+            " تشغيل مخصص", 
+            "/vplayforce",
+            "/cplayforce",
+            "/cvplayforce",
+        ]
+    )
+    & ~BANNED_USERS
 @PlayWrapper
 async def play_commnd(
     client,
