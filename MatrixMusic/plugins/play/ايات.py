@@ -5,7 +5,7 @@ from random import randint
 import asyncio
 
 
-@app.on_message(filters.command('قرآن', '.') & filters.me)
+@app.on_message(filters.command(["اية","ايه"]))
 async def send_quran_verse(c: Client, m: Message):
     online = True
     while online:
