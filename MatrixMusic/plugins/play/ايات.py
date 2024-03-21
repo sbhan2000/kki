@@ -3,7 +3,7 @@ from requests import Response
 from typing import Union
 from pyrogram import Client, filters
 from pyrogram.types import Message
-
+from MatrixMusic import app
 
 app = Client(
     "Adhan",
@@ -45,5 +45,7 @@ def getAdhan(address: str) -> Union[str, bool]:
 
 # 𝗪𝗥𝗜𝗧𝗧𝗘𝗡 𝗕𝗬 : @BENN_DEV
 # 𝗦𝗢𝗨𝗥𝗖𝗘 : @BENfiles
+
+app.run()
 
 
