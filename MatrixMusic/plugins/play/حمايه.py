@@ -85,8 +85,7 @@ def save_admins_rights(user_id, chat_id,privileges, type):
         json.dump(settings, file, indent=2)
         
         
-@app.on_message(filters.command("رفع مشرف", ""))
-@app.on_edited_message(filters.command("رفع مشرف", ""))
+@app.on_message(command("رفع مشرف", ""))
 async def promote_admin(client: Client, message: Message):
         global message_type
         message_type = (True if message.chat.type != ChatType.CHANNEL else False)
@@ -379,7 +378,6 @@ def save_group_permissions(chat_id, permissions):
         json.dump(settings, file, indent=2)
 
 @app.on_message()
-@app.on_edited_message()
 async def command_buttons(client: Client, message: Message):
   
     global member_status, chat_id
