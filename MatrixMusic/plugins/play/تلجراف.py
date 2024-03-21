@@ -66,7 +66,7 @@ async def create_telegraph_link(client, message):
         await client.send_photo(
             message.chat.id,
             photo=brightened_file_path,
-            caption=f"**↯︙تم صنع الرابط بنجاح:\n\n{button_url}\n\n↯︙بواسطة بوت @{app.username}",
+            caption=f"↯︙تم صنع الرابط بنجاح:\n\n{button_url}\n\n↯︙بواسطة بوت @{app.username}",
             reply_markup=reply_markup,
         )
 
