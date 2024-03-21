@@ -3,7 +3,7 @@ from pyrogram.types import Message
 from requests import get
 from random import randint
 import asyncio
-
+from MatrixMusic import app
 
 @app.on_message(filters.command(["اية","ايه"]))
 async def send_quran_verse(c: Client, m: Message):
