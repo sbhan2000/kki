@@ -3,8 +3,8 @@ from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.types import CallbackQuery, InputMediaPhoto, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.types import CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
-from MatrixMusic import app
-
+from youtubesearchpython.__future__ import VideosSearch
+from MatrixMusic import Telegram, YouTube, app
 
 last_clicked_button = {}
 
