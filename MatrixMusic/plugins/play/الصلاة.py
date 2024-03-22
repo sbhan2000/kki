@@ -9,7 +9,7 @@ from MatrixMusic import app
 
 
 
-zone = timezone("Africa/Cairo")
+zone = timezone("Asia/Baghdad")
 
 s = Session()
 @app.on_message(filters.regex(r"^(مواقيت صلاة|مواقيت صلاه|صلوات)"))
