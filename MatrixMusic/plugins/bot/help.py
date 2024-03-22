@@ -4,7 +4,6 @@ from pyrogram import filters, types
 from pyrogram.types import InlineKeyboardMarkup, Message
 
 from MatrixMusic import app
-from MatrixMusic.utils import first_page, second_page
 from MatrixMusic.utils.database import get_lang
 from MatrixMusic.utils.decorators.language import LanguageStart, languageCB
 from MatrixMusic.utils.inline.help import help_back_markup, private_help_panel
@@ -199,15 +198,4 @@ async def helper_cb(client, CallbackQuery, _):
 
 
 
-@app.on_callback_query(filters.regex("dilXaditi") & ~BANNED_USERS)
-@languageCB
-async def first_pagexx(client, CallbackQuery, _):
-    menu_next = second_page(_)
-    try:
-        await CallbackQuery.message.edit_text(_["help_1"], reply_markup=menu_next)
-        return
-    except:
-        return
 
-
-        
