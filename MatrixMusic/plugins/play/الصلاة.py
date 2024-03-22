@@ -78,7 +78,14 @@ def getNext(timings: dict) -> str:
     hours, remainder = divmod(time_difference.seconds, 3600)
     minutes, _ = divmod(remainder, 60)
     return f"متبقى على صلاة {pnames[next_prayer]} {hours} ساعه و {minutes} دقيقه."
-
+    
+async def azkar():
+  while not await asyncio.sleep(2):
+    if prayer_time():
+     prayer = prayer_time()
+     await kill()
+     for i in chat:
+       await app.send_message(f"↯︙حان الان وقت الاذان {prayer} بالتوقيت المحلي للقاهرة 🥰♥️")
 
 
 # 𝗪𝗥𝗜𝗧𝗧𝗘𝗡 𝗕𝗬 : @BENN_DEV
