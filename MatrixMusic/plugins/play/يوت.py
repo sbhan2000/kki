@@ -8,8 +8,7 @@ from pyrogram.types import (InlineKeyboardButton,
                             InlineKeyboardMarkup, InputMediaAudio,
                             InputMediaVideo, Message)
 
-from config import (BANNED_USERS, SONG_DOWNLOAD_DURATION,
-                    SONG_DOWNLOAD_DURATION_LIMIT)
+from config import (BANNED_USERS, SONG_DOWNLOAD_DURATION)
 from strings import get_command
 from MatrixMusic import YouTube, app
 from MatrixMusic.utils.decorators.language import language, languageCB
