@@ -8,7 +8,7 @@ from MatrixMusic import app
 
 
 @app.on_message(filters.regex(r"^(تنزيل)"))
-async def searcher(_, message: Message):
+async def ytsearch(_, message: Message):
     chat_id = message.chat.id
     wait = await message.reply_text("Processing...")
     text = message.text.split(" ", 1)[1]
