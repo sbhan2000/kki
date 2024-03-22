@@ -1,6 +1,6 @@
 # 𝗪𝗥𝗜𝗧𝗧𝗘𝗡 𝗕𝗬 : @BENN_DEV
 # 𝗦𝗢𝗨𝗥𝗖𝗘 : @BENfiles
-from pytube import Search
+from youtube_search import YoutubeSearch
 from pyrogram import Client, filters
 from pyrogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton, InputMediaPhoto
 from MatrixMusic import app
