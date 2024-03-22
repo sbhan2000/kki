@@ -81,8 +81,8 @@ def getNext(timings: dict) -> str:
     
 async def azkar():
   while not await asyncio.sleep(2):
-    if prayer_time():
-     prayer = prayer_time()
+    if getAdhan():
+     prayer = getAdhan()
      await kill()
      for i in chat:
        await app.send_message(f"↯︙حان الان وقت الاذان {prayer} بالتوقيت المحلي للقاهرة 🥰♥️")
