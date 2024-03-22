@@ -17,21 +17,19 @@ from yt_dlp import YoutubeDL
 last_clicked_button = {}
 
 @app.on_message(filters.command("تنزيل"))
-async def tom_youtube(_, message):
+async def download_song(client, message):
     global video_link, audio_link, title, duration, rating, views, description
 
     name = message.text.split(None, 1)[1]
     response = requests.get(f"https://youtube.dev-tomtom.repl.co/tom={name}")
     data = response.json()
-    tom_info = data[0]["Tom"]
-    audio_link = tom_info["audio_link"]
-    video_link = tom_info["download_link_video"]
-    photo_link = tom_info["photo"]
-    title = tom_info["title"]
-    duration = tom_info["duration"]
-    rating = tom_info["rating"]
-    views = tom_info["views"]
-    description = tom_info["description"]
+    title = results[0]["title"][:40]
+    thumbnail = results[0]["thumbnails"][0]
+    thumb_name = f"{title}.jpg"
+    thumb = requests.get(thumbnail, allow_redirects=True)
+    open(thumb_name, "wb").write(thumb.content)
+    duration = results[0]["duration"]
+
     
 
     keyboard = InlineKeyboardMarkup(
