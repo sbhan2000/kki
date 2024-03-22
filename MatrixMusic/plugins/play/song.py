@@ -17,7 +17,7 @@ from yt_dlp import YoutubeDL
 last_clicked_button = {}
 
 @app.on_message(filters.command("تنزيل"))
-async def tom_youtube(client, message):
+async def tom_youtube(_, message):
     global video_link, audio_link, title, duration, rating, views, description
 
     name = message.text.split(None, 1)[1]
