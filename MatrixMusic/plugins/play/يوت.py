@@ -11,7 +11,7 @@ from MatrixMusic import app
 async def ytsearch(_, message: Message):
     chat_id = message.chat.id
     wait = await message.reply_text("Processing...")
-    text = message.text.split("_")[1:]
+    text = message.text.split(None, 1)[1]
     try: search = Search(text)
     except: return await app.edit_message_text(
                 chat_id=chat_id,
