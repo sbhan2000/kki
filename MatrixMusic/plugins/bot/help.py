@@ -55,7 +55,7 @@ async def helper_private(
         language = await get_lang(chat_id)
         _ = get_string(language)
         keyboard = help_pannel(_)
-        await message.reply_text(f"صلي علي النبي وتبسم ♥️✨")
+        await message.reply_text("صلي علي النبي وتبسم ♥️✨")
         await update.reply_photo(
             photo=config.START_IMG_URL,
             caption=_["help_1"].format(config.SUPPORT_HEHE), reply_markup=keyboard)
