@@ -21,7 +21,7 @@ from MatrixMusic.plugins.play.filters import command
 
 
 @app.on_message(filters.command(["song","تحميل","تنزيل"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"])) 
-async def song_commad_private(client, message: Message, _):
+async def download_song(_, message):
     await message.delete()
     url = await YouTube.url(message)
     if url:
