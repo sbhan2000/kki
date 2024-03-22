@@ -5,8 +5,15 @@ from pyrogram.types import CallbackQuery, InputMediaPhoto, InlineKeyboardMarkup,
 from MatrixMusic import app
 from pyrogram.types import CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
 from time import time
+import os
+import future
 import asyncio
-
+import wget
+import time
+import yt_dlp
+from urllib.parse import urlparse
+from youtube_search import YoutubeSearch
+from yt_dlp import YoutubeDL
 
 last_clicked_button = {}
 
