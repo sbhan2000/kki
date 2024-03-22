@@ -8,7 +8,6 @@ from time import time
 import os
 import future
 import asyncio
-import wget
 import time
 import yt_dlp
 from urllib.parse import urlparse
@@ -17,7 +16,7 @@ from yt_dlp import YoutubeDL
 
 last_clicked_button = {}
 
-@app.on_message(filters.command("تنزيل", ""))
+@app.on_message(filters.command("تنزيل"))
 async def tom_youtube(client, message):
     global video_link, audio_link, title, duration, rating, views, description
 
