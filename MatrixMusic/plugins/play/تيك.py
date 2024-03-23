@@ -3,7 +3,6 @@ import urllib.request as request
 from pyrogram import Client, filters
 from pyrogram.types import Message, CallbackQuery
 from pyrogram.types import InlineKeyboardMarkup as Markup, InlineKeyboardButton as Button
-from pyrolistener import Listener
 from pyrolistener.exceptions import TimeOut
 from os import remove
 from MatrixMusic import app
