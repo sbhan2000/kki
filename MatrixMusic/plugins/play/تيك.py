@@ -6,8 +6,7 @@ from pyrogram.types import InlineKeyboardMarkup as Markup, InlineKeyboardButton 
 from os import remove
 from MatrixMusic import app
 
-listener = Listener(app)
-session = Session()
+
 api = 'https://api.saidazim.uz/tiktok/'
 turl = 'https://vm.tiktok.com/{id}'
 
