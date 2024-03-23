@@ -87,5 +87,3 @@ async def aDownload(_: Client, callback: CallbackQuery):
 
 # https://vm.tiktok.com/ZM6NRL4nG
 if __name__ == '__main__': 
-# 𝗪𝗥𝗜𝗧𝗧𝗘𝗡 𝗕𝗬 : @BENN_DEV
-# 𝗦𝗢𝗨𝗥𝗖𝗘 : @BENfiles
