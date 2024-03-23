@@ -45,6 +45,7 @@ def get_duration(playing):
 async def get_queue(client, message: Message, _):
     if message.command[0][0] == "/":
         chat_id = await get_cmode(message.chat.id)
+        user_mention = message.from_user.mention if message.from_user else "المشـرف"
         if chat_id is None:
             return await message.reply_text(_["setting_7"])
         try:
