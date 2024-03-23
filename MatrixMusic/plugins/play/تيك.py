@@ -85,5 +85,4 @@ async def aDownload(_: Client, callback: CallbackQuery):
     remove(f'{_id}.mp4')
 
 
-# https://vm.tiktok.com/ZM6NRL4nG
-if __name__ == '__main__': 
+
