@@ -6,7 +6,7 @@ from pyrogram import Client, filters, emoji
 from strings.filters import command
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
 from pyrogram.errors import MessageNotModified
-from ZeMusic import app
+from MatrixMusic import app
 from config import OWNER, LOGGER_ID
 
 
