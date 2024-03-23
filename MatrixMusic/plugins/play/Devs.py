@@ -12,7 +12,6 @@ from MatrixMusic import app
 from asyncio import gather
 from pyrogram.errors import FloodWait
 from config import OWNER_ID
-from config import OWNER
 from random import  choice, randint
 
 def get_file_id(msg: Message):
