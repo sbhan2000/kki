@@ -19,7 +19,7 @@ from pyrogram.errors import (
     UserNotParticipant,
 )
 
-tz = pytz.timezone('Africa/Cairo')
+tz = pytz.timezone('Asia/Baghdad')
 
 chat = []
 
@@ -27,16 +27,16 @@ chat = []
 async def azaan(c, msg):
   if msg.text == "تفعيل الاذان":
     if msg.chat.id in chat:
-      return await msg.reply_text("↯︙الاذان متفعل هنا من قبل 🥰♥️")
+      return await msg.reply_text("- الاذان متفعل هنا من قبل 🥰♥️")
     else:
       chat.append(msg.chat.id)
-      return await msg.reply_text("↯︙تم تفعيل الاذان ♥️🌿")
+      return await msg.reply_text("تم تفعيل الاذان ♥️🌿")
   elif msg.text == "تعطيل الاذان":
     if msg.chat.id in chat:
       chat.remove(msg.chat.id)
-      return await msg.reply_text("↯︙تم تعطيل الاذان ♥️🌿")
+      return await msg.reply_text("تم تعطيل الاذان ♥️🌿")
     else:
-      return await msg.reply_text("↯︙الاذان متعطل هنا من قبل 🥰♥️")
+      return await msg.reply_text("- الاذان متعطل هنا من قبل 🥰♥️")
       
 async def kill():
   for i in chat:
@@ -45,7 +45,7 @@ async def kill():
 
 async def play(i):
   assistant = await group_assistant(Zelzaly,i)
-  file_path = "MatrixMusic/assets/azan.m4a"
+  file_path = "AFROTOMusic/assets/azan.m4a"
   stream = AudioPiped(file_path, audio_parameters=HighQualityAudio())
   try:
       await assistant.join_group_call(
@@ -73,25 +73,24 @@ async def play(i):
     
            
        
-
 def prayer_time():
    try:
-       prayer = requests.get(f"http://api.aladhan.com/timingsByAddress?address=Cairo&method=4&school=0")
+       prayer = requests.get(f"https://api.aladhan.com/v1/timingsByCity?city=Cairo&country=Egypt&method=4")
        prayer = prayer.json()
-       fajr = datetime.strptime(prayer['data']['timings']['Fajr'], '%H:%M').strftime('%H:%M')
-       dhuhr = datetime.strptime(prayer['data']['timings']['Dhuhr'], '%H:%M').strftime('%H:%M')
-       asr = datetime.strptime(prayer['data']['timings']['Asr'], '%H:%M').strftime('%H:%M')
-       maghrib = datetime.strptime(prayer['data']['timings']['Maghrib'], '%H:%M').strftime('%H:%M')
-       isha = datetime.strptime(prayer['data']['timings']['Isha'], '%H:%M').strftime('%H:%M')
-       if datetime.now(tz).strftime('%H:%M') == fajr:
+       fajr = datetime.strptime(prayer['data']['timings']['Fajr'], '%H:%M').strftime('%I:%M %p')
+       dhuhr = datetime.strptime(prayer['data']['timings']['Dhuhr'], '%H:%M').strftime('%I:%M %p')
+       asr = datetime.strptime(prayer['data']['timings']['Asr'], '%H:%M').strftime('%I:%M %p')
+       maghrib = datetime.strptime(prayer['data']['timings']['Maghrib'], '%H:%M').strftime('%I:%M %p')
+       isha = datetime.strptime(prayer['data']['timings']['Isha'], '%H:%M').strftime('%I:%M %p')
+       if datetime.now(tz).strftime('%I:%M %p') == fajr:
          return "الفجر"
-       elif datetime.now(tz).strftime('%H:%M') == dhuhr:
+       elif datetime.now(tz).strftime('%I:%M %p') == dhuhr:
          return "الظهر"
-       elif datetime.now(tz).strftime('%H:%M') == asr:
+       elif datetime.now(tz).strftime('%I:%M %p') == asr:
          return "العصر"
-       elif datetime.now(tz).strftime('%H:%M') == maghrib:
+       elif datetime.now(tz).strftime('%I:%M %p') == maghrib:
          return "المغرب"
-       elif datetime.now(tz).strftime('%H:%M') == isha:  
+       elif datetime.now(tz).strftime('%I:%M %p') == isha:  
          return "العشاء"
    except Exception as e:
        asyncio.sleep(5)
@@ -105,9 +104,10 @@ async def azkar():
      prayer = prayer_time()
      await kill()
      for i in chat:
-       await app.send_message(i, f"↯︙حان الان وقت الاذان {prayer} بالتوقيت المحلي للقاهرة 🥰♥️")
+       await app.send_message(i, f"حان الان وقت اذان {prayer} بتوقيت القاهرة 🥰♥️")
        await play(i)
      await asyncio.sleep(174)
      await kill()
 #مواعيد الصلاه بس الي سارقها بقيت الكود كتابتي هي اكيد كتابه معاقه بس عادي م مهم رايك انا مبسوط بيها يوزري للاعمال الخاصه @z0hary
-     
+
+        
