@@ -98,7 +98,7 @@ def prayer_time():
 #لالالالا
 # جتة مواعيد الصلاة الي تحت دي سارقها من هلال علشان م بعرف استخدم مكتبة ال time ف انضموا لقناته @SOURCEFR3ON
 
-async def azkar():
+async def azaan():
   while not await asyncio.sleep(2):
     if prayer_time():
      prayer = prayer_time()
