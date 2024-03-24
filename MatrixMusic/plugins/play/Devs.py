@@ -37,7 +37,7 @@ def get_file_id(msg: Message):
                 return obj
 
 @app.on_message(
-    command(["المبرمج","حمد","مبرمج السورس"])
+    command(["المبرمج","حمد","مبرمج السورس","الـمبرمج])
     & filters.group
   
 )
@@ -45,7 +45,7 @@ async def yas(client, message):
     usr = await client.get_chat("ah_2_v")
     name = usr.first_name
     photo = await app.download_media(usr.photo.big_file_id)
-    await message.reply_photo(photo,       caption=f"الـمبرمج\n↯︙𝖣𝖾𝗏 ↬ ⦗ {name} ⦘\n↯︙𝖴𝗌𝖤𝗋 ↬ ⦗ @{usr.username} ⦘\n↯︙𝖨𝖣 ↬ ⦗ {usr.id} ⦘\n↯︙𝖡𝗂𝖮 ↬ ⦗ {usr.bio} ⦘",  
+    await message.reply_photo(photo,       caption=f"<b>⦗ الـمبرمج ⦘<b>\n<b>↯︙𝖣𝖾𝗏 ↬ ⦗ {name} ⦘<b>\n<b>↯︙𝖴𝗌𝖤𝗋 ↬ ⦗ @{usr.username} ⦘<b>\n<b>↯︙𝖨𝖣 ↬ ⦗ {usr.id} ⦘<b>\n<b>↯︙𝖡𝗂𝖮 ↬ ⦗ {usr.bio} ⦘<b>",  
     reply_markup=InlineKeyboardMarkup(
             [
                 [
