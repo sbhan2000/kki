@@ -27,7 +27,7 @@ async def devid(client: Client, message: Message):
                     InlineKeyboardButton(name, url=f"tg://user?id={uid}"),
                 ],[
                     InlineKeyboardButton(
-                        "•✯  السورس  ✯•", url="https://t.me/EF_19"),
+                        "قناة الـبوت", url=config.SUPPORT_CHANNEL"),
                 ],
             ]
         ),
