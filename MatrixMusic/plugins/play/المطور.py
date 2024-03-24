@@ -8,6 +8,13 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 from pyrogram.errors import MessageNotModified
 from MatrixMusic import app
 from config import OWNER_ID, LOGGER_ID, SUPPORT_CHANNEL
+import time
+import aiohttp
+from MatrixMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
+from asyncio import gather
+from pyrogram.errors import FloodWait
+from random import  choice, randint
+
 
 
 @app.on_message(command(["مطور", "", "المطور"]))
@@ -20,7 +27,7 @@ async def devid(client: Client, message: Message):
        
     await message.reply_photo(
         photo="downloads/developer.jpg",
-        caption=f"""<b> ⦗ 𝐃𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 ⦘<b>\n<b>↯︙𝖣𝖾𝗏 ↬ :</b> <a href='tg://user?id={uid}'>{name}</a> ⦘\n\n<b>↯︙𝖴𝗌𝖤𝗋 ↬</b> ⦗ @{usrnam} ⦘\n<b>↯︙𝖨𝖣 ↬<b> ⦗ {usr.id} ⦘\n<b>↯︙𝖡𝗂𝖮 ↬ <b>⦗ {usr.bio} ⦘""",
+        caption=f"""<b> ⦗ 𝐃𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 ⦘<b>\n<b>↯︙𝖣𝖾𝗏 ↬ :</b> ⦗ <a href='tg://user?id={uid}'>{name}</a> ⦘\n\n<b>↯︙𝖴𝗌𝖤𝗋 ↬</b> ⦗ @{usrnam} ⦘\n<b>↯︙𝖨𝖣 ↬<b> ⦗ {usr.id} ⦘\n<b>↯︙𝖡𝗂𝖮 ↬ <b>⦗ {usr.bio} ⦘""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
