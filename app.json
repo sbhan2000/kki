@@ -22,11 +22,6 @@
         "value": "",
         "required": true
       },
-      "OWNER": {
-        "description": "⦗ يوزر المطـــور ⦘ ↫ مطـــور بـــوت الميـــوزك",
-        "value": "",
-        "required": true
-      },
       "START_IMG_URL": {
         "description": "⦗ صوره برابط تلجراف ⦘ ↫ ضع صورة ستارت للبوت",
         "value": "",
