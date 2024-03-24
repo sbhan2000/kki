@@ -8,7 +8,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 from pyrogram.errors import MessageNotModified
 from MatrixMusic import app
 from config import OWNER_ID, LOGGER_ID
-from config import SUPPORT_CHANNEL
+from config 
 
 
 
