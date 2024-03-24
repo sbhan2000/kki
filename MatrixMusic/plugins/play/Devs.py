@@ -38,8 +38,6 @@ def get_file_id(msg: Message):
 
 @app.on_message(
     command(["المبرمج","حمد","مبرمج السورس","الـمبرمج])
-    & filters.group
-  
 )
 async def yas(client, message):
     usr = await client.get_chat("ah_2_v")
