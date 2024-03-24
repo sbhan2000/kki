@@ -13,6 +13,7 @@ from asyncio import gather
 from pyrogram.errors import FloodWait
 from config import OWNER_ID
 from random import  choice, randint
+import config 
 
 def get_file_id(msg: Message):
     if msg.media:
@@ -49,6 +50,34 @@ async def yas(client, message):
                 [
                     InlineKeyboardButton(
                         name, url=f"https://t.me/{usr.username}")
+                ],
+            ]
+        ),
+    )
+
+
+
+
+@app.on_message(
+    command(["السورس","سورس","الـسورس])
+)
+async def yas(client, message):
+    usr = await client.get_chat("ah07v")
+    name = usr.first_name
+    photo = await app.download_media(usr.photo.big_file_id)
+    await message.reply_photo(photo,       caption=f"<b>𝘛𝘏𝘌 𝘉𝘌𝘚𝘛 𝘚𝘖𝘜𝘙𝘊𝘌 𝘖𝘕 𝘛𝘌𝘓𝘌𝘎𝘙𝘈𝘔<b>",  
+    reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "𝙶𝚛𝚘𝚞𝚙", url=f"https://t.me/ah_1_v"
+                    ),
+                    InlineKeyboardButton(
+                        "𝙲𝚑𝚊𝚗𝚗𝚎𝚕", url=f"https://t.me/ah07v"),
+                ],
+                [
+                    InlineKeyboardButton(
+                        "𝙳𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛", url=f"https://t.me/ah_2_v" )
                 ],
             ]
         ),
