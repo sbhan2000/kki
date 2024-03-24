@@ -149,7 +149,7 @@ async def azkar():
 "يَابًنِيَ إنِ صّلَاح الَحًيَاةّ فُ أتٌجّاهّ الَقُبًلَهّ 🥀🌿",
 "الَلَهّمً ردٍنِا إلَيَکْ ردٍا جّمًيَلَا💔🥺"
    ]
-   while not await asyncio.sleep(600):
+   while not await asyncio.sleep(2000):
      for i in chat:
        try:
          await app.send_message(i, random.choice(azkarl))
