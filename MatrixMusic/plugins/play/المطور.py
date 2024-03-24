@@ -8,12 +8,6 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 from pyrogram.errors import MessageNotModified
 from MatrixMusic import app
 from config import OWNER_ID, LOGGER_ID, SUPPORT_CHANNEL
-import time
-import aiohttp
-from MatrixMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
-from asyncio import gather
-from pyrogram.errors import FloodWait
-from random import  choice, randint
 
 
 
