@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 from pyrogram import filters
 from pyrogram.errors import FloodWait
 from pyrogram.raw import types
-from ZeMusic import app
+from MatrixMusic import app
 import random
 
 chat = []
