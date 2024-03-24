@@ -7,7 +7,8 @@ from strings.filters import command
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
 from pyrogram.errors import MessageNotModified
 from MatrixMusic import app
-from config import OWNER_ID, LOGGER_ID, SUPPORT_CHANNEL
+from config import OWNER_ID, LOGGER_ID
+from config import SUPPORT_CHANNEL
 
 
 
@@ -28,7 +29,7 @@ async def devid(client: Client, message: Message):
                     InlineKeyboardButton(name, url=f"tg://user?id={uid}"),
                 ],[
                     InlineKeyboardButton(
-                        text="قناة البوت", url=config.SUPPORT_CHANNEL),
+                        " القناة ", url=config.SUPPORT_CHANNEL),
                 ],
             ]
         ),
