@@ -13,7 +13,7 @@ import config
 
 
 
-@app.on_message(command(["مطور", "المطور"]) & filters.group)
+@app.on_message(command([""]) & filters.group)
 async def zilzal(client: Client, message: Message):
     usr = await client.get_users(OWNER_ID)
     name = usr.first_name
