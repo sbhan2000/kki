@@ -40,3 +40,4 @@ async def devid(client: Client, message: Message):
             ]
         ),
     )
+
