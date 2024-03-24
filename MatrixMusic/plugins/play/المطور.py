@@ -7,12 +7,12 @@ from strings.filters import command
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
 from pyrogram.errors import MessageNotModified
 from MatrixMusic import app
-from config import OWNER, LOGGER_ID, SUPPORT_CHANNEL
+from config import OWNER_ID, LOGGER_ID, SUPPORT_CHANNEL
 
 
 @app.on_message(command(["مطور", "", "المطور"]))
 async def devid(client: Client, message: Message):
-    usr = await client.get_users(OWNER)
+    usr = await client.get_users(OWNER_ID)
     name = usr.first_name
     usrnam = usr.username
     uid = OWNER_ID
