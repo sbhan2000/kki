@@ -10,6 +10,7 @@ import pytz
 from MatrixMusic.core.call import Zelzaly
 from pytgcalls import PyTgCalls, StreamType
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
+from MatrixMusic.core.call import Zelzaly
 from MatrixMusic.utils.database import *
 from pytgcalls.exceptions import (NoActiveGroupCall,TelegramServerError,AlreadyJoinedError)
 from pyrogram.errors import (
@@ -23,7 +24,7 @@ tz = pytz.timezone('Asia/Baghdad')
 chat = []
 
 @app.on_message(filters.text & ~filters.private, group = 20)
-async def handle(c, msg):
+async def azaan(c, msg):
   if msg.text == "تفعيل الاذان":
     if msg.chat.id in chat:
       return await msg.reply_text("- الاذان متفعل هنا من قبل 🥰♥️")
@@ -98,15 +99,15 @@ def prayer_time():
 #لالالالا
 # جتة مواعيد الصلاة الي تحت دي سارقها من هلال علشان م بعرف استخدم مكتبة ال time ف انضموا لقناته @SOURCEFR3ON
 
-async def handler():
+async def azkar():
   while not await asyncio.sleep(2):
     if prayer_time():
      prayer = prayer_time()
      await kill()
      for i in chat:
-       await app.send_message(i, f"حان الان وقت اذان {prayer} بتوقيت القاهرة 🥰♥️")
+       await app.send_message(i, f"حان الان وقت اذان {prayer} 🥰♥️") 
        await play(i)
      await asyncio.sleep(174)
      await kill()
-#مواعيد الصلاه بس الي سارقها بقيت الكود كتابتي هي اكيد كتابه معاقه بس عادي م مهم رايك انا مبسوط بيها يوزري للاعمال الخاصه @z0hary
+#مواعيد الصلاه بس الي سارقها بقيت الكود كتابتي هي اكيد كتابه معاقه بس عادي م مهم رايك انا مبسوط بيها يوزري للاعمال الخاصه @MH_BP
      
