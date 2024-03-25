@@ -79,7 +79,7 @@ txt = [
         
 
 
-@app.on_message(command(["كتبات","حكمه"]))
+@app.on_message(filters.command(["كتبات","حكمه"]))
 
 async def ktbat(client: Client, message: Message):
 
