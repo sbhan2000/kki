@@ -2,7 +2,7 @@ import asyncio
 from pyrogram import filters
 from pyrogram.errors import FloodWait
 from pyrogram.raw import types
-from ZeMusic import app
+from MatrixMusic import app
 import random
 from datetime import datetime
 import requests
