@@ -664,6 +664,34 @@ async def get_authuser_names(chat_id: int) -> List[str]:
         _notes.append(note)
     return _notes
 
+async def get_userbot(bot_username):
+  userbot = user.get(bot_username)
+  if not userbot:
+   Bots = botss.find({})
+   for i in Bots:
+       bot = i["bot_username"]
+       if bot == bot_username:
+         session = i["session"]
+         userbot = Client("source", api_id=API_ID, api_hash=API_HASH, session_string=session)
+         user[bot_username] = userbot
+         return userbot
+  return userbot
+
+# Call Client
+async def get_call(bot_username):
+  calll = call.get(bot_username)
+  if not calll:
+   Bots = botss.find({})
+   for i in Bots:
+       bot = i["bot_username"]
+       if bot == bot_username:
+         userbot = await get_userbot(bot_username)
+         callo = PyTgCalls(userbot, cache_duration=100)
+         await callo.start()
+         call[bot_username] = callo
+         return callo
+  return calll
+
 
 async def get_authuser(chat_id: int, name: str) -> Union[bool, dict]:
     name = name
