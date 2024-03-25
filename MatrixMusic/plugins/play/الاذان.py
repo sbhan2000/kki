@@ -7,7 +7,7 @@ import random
 from datetime import datetime
 import requests
 import pytz
-from MatrixMusic.core.call import Mody
+from MatrixMusic.core.call import Zelzaly
 from pytgcalls import PyTgCalls, StreamType
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
 from MatrixMusic.utils.database import *
@@ -39,11 +39,11 @@ async def handle(c, msg):
       
 async def kill():
   for i in chat:
-    await Mody.force_stop_stream(i)
+    await Zelzaly.force_stop_stream(i)
 
 
 async def play(i):
-  assistant = await group_assistant(Mody,i)
+  assistant = await group_assistant(Zelzaly,i)
   file_path = "./MatrixMusic/assets/azan.m4a"
   stream = AudioPiped(file_path, audio_parameters=HighQualityAudio())
   try:
@@ -54,7 +54,7 @@ async def play(i):
       )
   except NoActiveGroupCall:
     try:
-        await Mody.join_assistant(i,i)
+        await Zelzaly.join_assistant(i,i)
     except Exception as e:
        await app.send_message(i,f"{e}")
   except TelegramServerError:
