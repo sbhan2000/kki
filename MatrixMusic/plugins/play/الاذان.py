@@ -24,7 +24,7 @@ cairo_timezone = pytz.timezone('Asia/Baghdad')
 azan_enabled_chats = []
 
 @app.on_message(filters.text & ~filters.private, group=20)
-async def handle_azan_command(c, msg):
+async def handle_azan(c, msg):
     chat_id = msg.chat.id
     if msg.text == "تفعيل الاذان":
         if chat_id in azan_enabled_chats:
@@ -93,3 +93,5 @@ async def azan_scheduler():
             await asyncio.sleep(177)
         await asyncio.sleep(2)
 asyncio.create_task(azan_scheduler())
+
+
