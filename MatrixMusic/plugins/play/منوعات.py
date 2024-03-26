@@ -169,35 +169,8 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-@app.on_message(filters.command(["الشيخ", "النقشبندي", "نقشبندي"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
-async def ihd(client: Client, message: Message):
-    rl = random.randint(1,90)
-    url = f"https://t.me/ggcnjj/{rl}"
-    await client.send_voice(message.chat.id,url,caption="🥹♥ ¦ تـم اختيـار الشيخ نقشبندي اليك",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
-                ],
-            ]
-        )
-    )
 
-@app.on_message(filters.command(["فيلم", "‹ فيلم ›"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
-async def ihd(client: Client, message: Message):
-    rl = random.randint(1,50)
-    url = f"https://t.me/gyigkk/{rl}"
-    await client.send_audio(message.chat.id,url,caption="↯ : تم اختيار فيلم اليك",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
-                ],
-            ]
-        )
-    )
+
 
 @app.on_message(filters.command(["استوري", "‹ ستوريات ›"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 async def ihd(client: Client, message: Message):
