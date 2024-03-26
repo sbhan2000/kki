@@ -114,13 +114,11 @@ async def get_thumb(videoid):
             image2.paste(image3, (50,70), mask = image3)
             image2.paste(circle, (0,0), mask = circle)
 
-            # Adjust the font size here
-            font_size = 40
-            font = ImageFont.truetype("MatrixMusic/assets/font2.ttf", font_size)
-            font2_size = 70
-            font2 = ImageFont.truetype("MatrixMusic/assets/font2.ttf", font2_size)
-            arial = ImageFont.truetype("MatrixMusic/assets/font2.ttf", 30)
-            name_font = ImageFont.truetype("MatrixMusic/assets/font.ttf", 40)
+            # fonts
+            font1 = ImageFont.truetype('MatrixMusic/assets/font.ttf', 30)
+            font2 = ImageFont.truetype('MatrixMusic/assets/font2.ttf', 70)
+            font3 = ImageFont.truetype('MatrixMusic/assets/font2.ttf', 40)
+            font4 = ImageFont.truetype('MatrixMusic/assets/font2.ttf', 35)
 
             image4 = ImageDraw.Draw(image2)
             image4.text((10, 10), "dev ➛ @ah_2_v", fill="white", font = font1, align ="left") 
