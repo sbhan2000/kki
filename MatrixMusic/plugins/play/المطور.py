@@ -41,3 +41,20 @@ async def devid(client: Client, message: Message):
         ),
     )
 
+
+
+
+@app.on_message(filters.command(["الحسابات المحذوفه"], "") & filters.group, group=5)
+async def list_bots(client: Client, message: Message):
+    chat_member = await client.get_chat_member(message.chat.id, message.from_user.id)
+    if chat_member.status not in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
+        return
+    count = 0 
+    async for member in client.get_chat_members(message.chat.id):
+        if member.user.is_deleted:
+            count += 1
+
+    if count > 0:
+        await message.reply_text(f"عدد الأعضاء الذين لديهم حسابات محذوفة في المجموعة: {count}")
+    else:
+        await message.reply_text("لا يوجد أعضاء لديهم حسابات محذوفة في المجموعة.")
