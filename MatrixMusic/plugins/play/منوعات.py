@@ -15,7 +15,7 @@ from MatrixMusic import app
 from random import  choice, randint
 
 
-@app.on_message(filters.command([f"شعر", "شع", "ش", "{BOT_USERNAME} شعر"]))
+@app.on_message(filters.command([f"شعر", "شع", "ش", "{BOT_USERNAME} شعر"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(8,20)
     url = f"https://t.me/saresnx/{rl}"
@@ -31,7 +31,7 @@ async def ihd(client: Client, message: Message):
     )
 
 
-@app.on_message(filters.command(["غنيلي", "‹ غنيلي ›", "غ", ""]))
+@app.on_message(filters.command(["غنيلي", "‹ غنيلي ›", "غ", ""], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(2,90)
     url = f"https://t.me/proxMusicl/{rl}"
@@ -47,7 +47,7 @@ async def ihd(client: Client, message: Message):
     )
 
 
-@app.on_message(filters.command(["صوره", "🕷", "‹ صور ›", "صور"]))
+@app.on_message(filters.command(["صوره", "🕷", "‹ صور ›", "صور"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(2,50)
     url = f"https://t.me/vnnkli/{rl}"
@@ -63,7 +63,7 @@ async def ihd(client: Client, message: Message):
     )
 
 
-@app.on_message(filters.command(["‹ انمي ›", "انمي"]))
+@app.on_message(filters.command(["‹ انمي ›", "انمي"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(2,90)
     url = f"https://t.me/LoreBots7/{rl}"
@@ -79,7 +79,7 @@ async def ihd(client: Client, message: Message):
     )
 
 
-@app.on_message(filters.command(["‹ متحركه ›", "متحركه"]))
+@app.on_message(filters.command(["متحركه","‹ متحركه ›"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(2,90)
     url = f"https://t.me/GifWaTaN/{rl}"
@@ -94,7 +94,7 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-@app.on_message(filters.command(["‹ اقتباسات ›", "اقتباس"]))
+@app.on_message(filters.command(["‹ اقتباسات ›", "اقتباس"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(2,90)
     url = f"https://t.me/LoreBots9/{rl}"
@@ -109,7 +109,7 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-@app.on_message(filters.command(["هيدرا", "‹ هيدرات ›"]))
+@app.on_message(filters.command(["هيدرا", "‹ هيدرات ›"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(2,90)
     url = f"https://t.me/flflfldld/{rl}"
@@ -124,7 +124,7 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-@app.on_message(filters.command(["صور", " ‹ صور ›"]))
+@app.on_message(filters.command(["صور", " ‹ صور ›"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(2,90)
     url = f"https://t.me/vvyuol/{rl}"
@@ -139,7 +139,7 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-@app.on_message(filters.command(["شباب", "افتار شباب"]))
+@app.on_message(filters.command(["شباب", "افتار شباب"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(2,90)
     url = f"https://t.me/mlscc_dhsb/{rl}"
@@ -154,7 +154,7 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-@app.on_message(filters.command(["‹ قران ›", "قران"]))
+@app.on_message(filters.command(["‹ قران ›", "قران"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(1,90)
     url = f"https://t.me/lllIIlIllIlIIlI/{rl}"
@@ -169,7 +169,7 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-@app.on_message(filters.command(["الشيخ", "النقشبندي", "نقشبندي"]))
+@app.on_message(filters.command(["الشيخ", "النقشبندي", "نقشبندي"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(1,90)
     url = f"https://t.me/ggcnjj/{rl}"
@@ -184,7 +184,7 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-@app.on_message(filters.command(["فيلم", "‹ فيلم ›"]))
+@app.on_message(filters.command(["فيلم", "‹ فيلم ›"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(1,50)
     url = f"https://t.me/gyigkk/{rl}"
@@ -199,7 +199,7 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-@app.on_message(filters.command(["استوري", "‹ ستوريات ›"]))
+@app.on_message(filters.command(["استوري", "‹ ستوريات ›"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 async def ihd(client: Client, message: Message):
     rl = random.randint(1,50)
     url = f"https://t.me/yoipopl/{rl}"
