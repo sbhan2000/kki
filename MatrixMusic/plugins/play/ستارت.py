@@ -26,7 +26,7 @@ async def arbic(_, query: CallbackQuery):
                         url=f"https://t.me/{app.username}?startgroup=true",
                     )
                 ],
-                [InlineKeyboardButton(" الدعم والتواصل ", url=f"https://t.me/ah07v"),
+                [InlineKeyboardButton(" الدعم والتواصل ", url=config.SUPPORT_CHAT),
                 ],
                 [                   InlineKeyboardButton(" طريقه التشغيل ", callback_data="bcmds"),
                     InlineKeyboardButton(" طريقه التفعيل ", callback_data="bhowtouse"),
@@ -66,7 +66,7 @@ Powered By [ᎪᎻᎷᎬᎠ]
                         url=f"https://t.me/{app.username}?startgroup=true",
                     )
                 ],
-                [InlineKeyboardButton("𝑠𝑢𝑝𝑝𝑜𝑟𝑡 ", url=f"https://t.me/ah07v"),
+                [InlineKeyboardButton("𝑠𝑢𝑝𝑝𝑜𝑟𝑡 ", url=config.SUPPORT_CHAT),
                 ],
                 [                
                     InlineKeyboardButton(" 𝐶𝑜𝑚𝑚𝑎𝑛𝑑𝑠", callback_data="cbcmds"),
