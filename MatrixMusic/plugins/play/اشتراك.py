@@ -22,10 +22,10 @@ async def checker(_: Client, message: Message):
     user_id = message.from_user.id
     user = message.from_user.first_name
     markup = Markup([
-        [Button("قناة البوت", url=f"https://t.me/{channel}")]
+        [Button("•اشترك من هنا•", url=f"https://t.me/{channel}")]
     ])
     await message.reply(
-        f"عذرًا عزيزي {user} عليك الإشتراك بقناة البوت اولا.",
+        f"<b>• عذرا عزيزي : 𓏺{users} \n•- لايمكنك ارسال اي رسالة هنا لانك غير مشترك في قناة المجموعة اشترك الان ؛ ✅  <b>",
         reply_markup = markup
     )
     
