@@ -15,7 +15,7 @@ from MatrixMusic.core.call import Zelzaly
 from MatrixMusic.utils.database import *
 from pytgcalls.exceptions import NoActiveGroupCall, TelegramServerError, AlreadyJoinedError
 
-tz = pytz.timezone('Asia/Baghdad ')
+tz = pytz.timezone('Asia/Baghdad')
 
 chat = []
 
