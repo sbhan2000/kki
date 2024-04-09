@@ -23,7 +23,7 @@ from pyrogram.types import (
     Message,
 )
 
-from config import BANNED_USERS, SONG_DOWNLOAD_DURATION, DURATION_LIMIT
+from config import BANNED_USERS, SONG_DOWNLOAD_DURATION, DURATION_LIMIT_MIN
 from MatrixMusic import YouTube, app
 from MatrixMusic.utils.decorators.language import language, languageCB
 from MatrixMusic.utils.formatters import convert_bytes
